@@ -1,0 +1,11 @@
+$color-black: #1a1a1a;;
+$font: 'Electrolize', sans-serif;;
+@mixin icon {
+  font-family: 'ElegantIcons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}

@@ -15,6 +15,23 @@ a{
 ul{
     list-style: none;
 }
+li{
+    display: inline-block;
+
+}
 form, input, button, select, option{
     outline: none;
+}
+body{
+    font-family: "BebasNeue-Regular", sans-serif;
+    font-size: 14px;
+}
+.container{
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.container-fluid{
+    max-width: 1920px;
+    margin: 0 auto;
 }
