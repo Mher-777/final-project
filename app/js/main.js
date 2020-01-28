@@ -9,6 +9,7 @@ $(function () {
         dotsClass: 'main-dots',
         autoplay: true,
     });
+
     $('.product__slider').slick({
         rows: 0,
         arrows: false,
@@ -22,6 +23,7 @@ $(function () {
         autoplay: true,
 
     });
+
     $('.product-pagination__slider').slick({
         rows: 0,
         dots: false,
@@ -34,6 +36,7 @@ $(function () {
         nextArrow: '<button class="product-arrows product-arrows__right"></button>',
         autoplaySpeed: 2000,
     });
+
     $('.categories-pagination__slider').slick({
         rows: 0,
         dots: false,
@@ -50,10 +53,21 @@ $(function () {
         starWidth: "12px",
         ratedFill: "#f6cc4c",
     });
+
     $('.categories-pagination__slider-btn').on('click', function () {
         $(this).addClass('active');
         $('.categories-pagination__slider-btn').removeClass('active');
         $(this).addClass('active');
+    });
+
+    $('.testimonials__item-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        appendArrows: '.testimonials__item-arrows',
+        prevArrow: '<button class="testimonials-arrows testimonials-arrows__left"></button>',
+        nextArrow: '<button class="testimonials-arrows testimonials-arrows__right"></button>',
+        infinite: false,
+        autoplay: true,
     });
     let mixer = mixitup('.categories__inner');
     // $.ajax({
