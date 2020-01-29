@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  scroll-behavior:smooth
 }
 
 *,
@@ -35,6 +36,8 @@ img {
 body {
   font-family: "BebasNeue-Regular", sans-serif;
   font-size: 14px;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 .container {

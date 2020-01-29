@@ -69,6 +69,25 @@ $(function () {
         infinite: false,
         autoplay: true,
     });
+    $('.blog__content-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button class="blog-arrows blog-arrows__left"></button>',
+        nextArrow: '<button class="blog-arrows blog-arrows__right"></button>',
+    });
+
+    wow = new WOW(
+        {
+            offset:       150,
+        }
+    );
+
+    $('.our-gallery__item').slice(0, 8).show();
+    $('.button__btn').on('click', function (e) {
+        e.preventDefault();
+        $('.our-gallery__item:hidden').slice(0, 8).slideDown();
+    });
+    wow.init();
     let mixer = mixitup('.categories__inner');
     // $.ajax({
     //     url: 'https://jsonplaceholder.typicode.com/photos',
@@ -82,7 +101,7 @@ $(function () {
     //             )
     //         }
     //     }
-    //
-    //
     // })
+
+
 });
