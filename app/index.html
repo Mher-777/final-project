@@ -17,16 +17,49 @@
             <div class="header__top-inner">
                 <div class="header__top-info">
                     <a href="mailto: tonydat@fenicha.com" class="header__top-info-item animated slideInDown">tonydat@fenicha.com</a>
-                    <a href="tel:+400123456789" class="header__top-info-item animated slideInDown">(+400) 123 456 789</a>
+                    <a href="tel:+400123456789" class="header__top-info-item animated slideInDown">(+400) 123 456
+                        789</a>
                     <a href="#" class="header__top-info-item animated slideInDown">24/7 online support</a>
                 </div>
                 <div class="header__top-login animated fadeInRight">
-                    <button class="header__top-login-btn">
+                    <button class="header__top-login-btn login-btn">
                         Login
                     </button>
-                    <button class="header__top-login-btn">
+                    <div class="header__top-login-box  header__top-log">
+                        <form action="#" class="header__top-login-form">
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Username</label>
+                                <input type="text" name="name" class="header__top-register-input" required>
+                            </div>
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Password</label>
+                                <input type="password" name="password" class="header__top-register-input" required>
+                            </div>
+                            <button class="header__top-form-btn" type="submit">Login</button>
+                            <a href="#" class="header__top-login-link">Forgot password?</a>
+                        </form>
+                    </div>
+                    <button class="header__top-login-btn register-btn">
                         register
                     </button>
+                    <div class="header__top-login-box  header__top-register">
+                        <form id="header__form-login" action="#" class="header__top-login-form" method="post">
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Username</label>
+                                <input type="text" name="name" class="header__top-register-input" required>
+                            </div>
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">E-Mail</label>
+                                <input type="text" name="email" class="header__top-register-input" required>
+                            </div>
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Password</label>
+                                <input type="password" name="password" class="header__top-register-input" required>
+                            </div>
+                            <span class="header__top-login-description">A password will be e-mailed to you</span>
+                            <button id="header-btn__reg" class="header__top-form-btn" type="submit">Register</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,10 +68,26 @@
         <div class="container">
             <div class="header__center-inner">
                 <div class="header-social animated fadeInLeft">
-                    <a href="#" class="header-social__link"></a>
-                    <a href="#" class="header-social__link"></a>
-                    <a href="#" class="header-social__link"></a>
-                    <a href="#" class="header-social__link"></a>
+                    <a href="#" class="header-social__link ">
+                        <span class="header-social__link-box header-social__link-facebook">
+                            Follow on twitter
+                        </span>
+                    </a>
+                    <a href="#" class="header-social__link header-social__link-twitter">
+                         <span class="header-social__link-box">
+                            Follow on twitter
+                        </span>
+                    </a>
+                    <a href="#" class="header-social__link header-social__link-google">
+                        <span class="header-social__link-box">
+                            Follow on twitter
+                        </span>
+                    </a>
+                    <a href="#" class="header-social__link header-social__link-pinterest">
+                        <span class="header-social__link-box">
+                            Follow on twitter
+                        </span>
+                    </a>
                 </div>
                 <div class="header-logo animated fadeInDown">
                     <a href="#" class="header-logo__link">
@@ -46,16 +95,27 @@
                     </a>
                 </div>
                 <div class="header-personal animated fadeInRight">
-                    <a href="#" class="header-personal__item icon-hart">
-                        <span>17</span>
-                    </a>
-                    <a href="#" class="header-personal__item icon-cart">
-                        <span>21</span>
-                    </a>
+                    <div class="header-personal__item-box">
+                        <a href="#" class="header-personal__item icon-hart">
+                            <span>17</span>
+                        </a>
+                        <div class="header-personal__item-box-text">
+                            there are <span class="number-one">()</span> items
+                        </div>
+                    </div>
+                    <div class="header-personal__item-box">
+                        <a href="#" class="header-personal__item icon-cart">
+                            <span>21</span>
+                        </a>
+                        <div class="header-personal__item-box-text">
+                            there are <span class="number-two">()</span> items
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="header__bottom">
         <div class="container">
@@ -87,7 +147,9 @@
                     </ul>
                 </nav>
                 <div class="header__bottom-search">
-                    <a href="#" class="header__bottom-search-link"></a>
+                    <div class="header__bottom-search-content">
+                        <input type="text" class="header__bottom-search-input" placeholder="Search">
+                    </div>
                 </div>
             </div>
         </div>
