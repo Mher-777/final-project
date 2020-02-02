@@ -75,7 +75,7 @@
   min-height: 50px;
   animation-delay: .5s;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 
   &-btn {
     border: none;
@@ -156,6 +156,10 @@
   min-height: 35px;
   background-color: #f3f3f3;
   border: none;
+
+  &.input-error {
+    border: 1px solid #e74c3c;
+  }
 }
 
 .header__top-form-btn {
@@ -428,10 +432,12 @@
     z-index: 2;
     display: none;
     @include anim-fadeindown;
+
     &.active {
       display: block;
 
     }
+
     &::after {
       content: '';
       position: absolute;
@@ -454,21 +460,100 @@
 }
 
 
-
-
 .header__menu-list {
   display: flex;
+
+  a {
+    color: $color-black;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.header__menu-item {
+  position: relative;
+  z-index: 3;
+
+  &:hover {
+    .header__menu-box {
+      display: block;
+    }
+
+  }
+}
+
+.header__menu-box {
+  position: absolute;
+  z-index: 1;
+  width: 270px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  background-color: #fff;
+  left: 0;
+  padding: 10px 0;
+  display: none;
+
+  &-link {
+    display: block;
+    padding: 30px 0;
+    border-bottom: 1px solid #eaeaea;
+    transition: .3s all;
+
+    &:hover {
+      border-bottom: 1px solid $color-black;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &-item {
+    position: relative;
+    display: block;
+    padding: 0 30px;
+
+    &:hover {
+      & > div {
+        transform: scale(1);
+        padding: 0 30px;
+      }
+    }
+
+    & > div {
+      position: absolute;
+      left: 270px;
+      width: 270px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+      background-color: #fff;
+      top: 30px;
+      transform: scale(0);
+
+      &:hover {
+        .header__menu-box {
+          display: block;
+        }
+      }
+    }
+  }
+
 }
 
 .header__menu-link {
   padding: 22px;
   color: $color-black;
   transition: .3s all;
+  text-transform: uppercase;
 
   &:hover {
     background-color: #1a1a1a;
     color: #f6cc4c;
   }
+}
+
+.form-error__text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #c0392b;
+  margin-top: 5px;
 }
 
 .main-slider {
@@ -2479,4 +2564,62 @@
 
 .footer__copy-payment {
   margin-bottom: 50px;
+}
+
+.lookbook__page {
+  &-bg{
+    min-height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+}
+.lookbook__header{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba($color-black, .75);
+  &-inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+  }
+}
+.position-sticky{
+  position: fixed;
+  top: 0;
+  transform: translateY(0);
+}
+.lookbook__header-menu{
+  &-link{
+    padding: 22px 30px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: .3s all;
+  }
+  &-item{
+    &:hover{
+      .lookbook__header-menu-link{
+        background-color: #f6cc4c;
+        color: $color-black;
+      }
+    }
+  }
+}
+.lookbook__header-personal-icon{
+  color: #fff;
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  &::before{
+    @include icon;
+  }
+  & + &{
+    padding-left: 30px;
+    margin-left: 30px;
+    border-left: 1px solid #f6cc4c;
+  }
 }

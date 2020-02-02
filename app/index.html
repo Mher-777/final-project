@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Final-project</title>
+    <title>FENICHA</title>
     <link href="https://fonts.googleapis.com/css?family=Electrolize|Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/libs.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
@@ -43,21 +43,25 @@
                         register
                     </button>
                     <div class="header__top-login-box  header__top-register">
-                        <form id="header__form-login" action="#" class="header__top-login-form" method="post">
+                        <form id="header__form-login" class="header__top-login-form">
                             <div class="header__top-login-form-row">
                                 <label class="header__top-login-form-text">Username</label>
-                                <input type="text" name="name" class="header__top-register-input" required>
+                                <input id="name" type="text" name="name" class="header__top-register-input" required>
+                                <span id="name-error" class="form-error__text"></span>
                             </div>
                             <div class="header__top-login-form-row">
                                 <label class="header__top-login-form-text">E-Mail</label>
-                                <input type="text" name="email" class="header__top-register-input" required>
+                                <input id="email" type="text" name="email" class="header__top-register-input" required>
+                                <span id="email-error" class="form-error__text"></span>
                             </div>
                             <div class="header__top-login-form-row">
                                 <label class="header__top-login-form-text">Password</label>
-                                <input type="password" name="password" class="header__top-register-input" required>
+                                <input id="password" type="password" name="password" class="header__top-register-input"
+                                       required>
+                                <span id="password-error" class="form-error__text"></span>
                             </div>
                             <span class="header__top-login-description">A password will be e-mailed to you</span>
-                            <button id="header-btn__reg" class="header__top-form-btn" type="submit">Register</button>
+                            <button id="header-btn__reg" class="header__top-form-btn" type="button">Register</button>
                         </form>
                     </div>
                 </div>
@@ -70,7 +74,7 @@
                 <div class="header-social animated fadeInLeft">
                     <a href="#" class="header-social__link ">
                         <span class="header-social__link-box header-social__link-facebook">
-                            Follow on twitter
+                            Follow on facebook
                         </span>
                     </a>
                     <a href="#" class="header-social__link header-social__link-twitter">
@@ -80,12 +84,12 @@
                     </a>
                     <a href="#" class="header-social__link header-social__link-google">
                         <span class="header-social__link-box">
-                            Follow on twitter
+                            Follow on google
                         </span>
                     </a>
                     <a href="#" class="header-social__link header-social__link-pinterest">
                         <span class="header-social__link-box">
-                            Follow on twitter
+                            Follow on pinterest
                         </span>
                     </a>
                 </div>
@@ -125,18 +129,363 @@
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
                             <a href="#" class="header__menu-link">Home</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li><li class="header__menu-box-item">
+                                    <a href="#" class="header__menu-box-link">Decor</a>
+                                    <div>
+                                        <a class="header__menu-box-link" href="">Bathroom</a>
+                                        <a class="header__menu-box-link" href="">Livingroom</a>
+                                        <a class="header__menu-box-link" href="">Officeroom</a>
+                                        <a class="header__menu-box-link" href="">Bedroom</a>
+                                        <a class="header__menu-box-link" href="">Diningroom</a>
+                                        <a class="header__menu-box-link" href="">Kitchen</a>
+                                    </div>
+                                </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header__menu-item">
                             <a href="#" class="header__menu-link">about</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li><li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Decor</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header__menu-item">
                             <a href="#" class="header__menu-link">collection</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li><li class="header__menu-box-item">
+                                    <a href="#" class="header__menu-box-link">Decor</a>
+                                    <div>
+                                        <a class="header__menu-box-link" href="">Bathroom</a>
+                                        <a class="header__menu-box-link" href="">Livingroom</a>
+                                        <a class="header__menu-box-link" href="">Officeroom</a>
+                                        <a class="header__menu-box-link" href="">Bedroom</a>
+                                        <a class="header__menu-box-link" href="">Diningroom</a>
+                                        <a class="header__menu-box-link" href="">Kitchen</a>
+                                    </div>
+                                </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header__menu-item">
                             <a href="#" class="header__menu-link">furniture</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li><li class="header__menu-box-item">
+                                    <a href="#" class="header__menu-box-link">Decor</a>
+                                    <div>
+                                        <a class="header__menu-box-link" href="">Bathroom</a>
+                                        <a class="header__menu-box-link" href="">Livingroom</a>
+                                        <a class="header__menu-box-link" href="">Officeroom</a>
+                                        <a class="header__menu-box-link" href="">Bedroom</a>
+                                        <a class="header__menu-box-link" href="">Diningroom</a>
+                                        <a class="header__menu-box-link" href="">Kitchen</a>
+                                    </div>
+                                </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header__menu-item">
                             <a href="#" class="header__menu-link">page</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li><li class="header__menu-box-item">
+                                    <a href="#" class="header__menu-box-link">Decor</a>
+                                    <div>
+                                        <a class="header__menu-box-link" href="">Bathroom</a>
+                                        <a class="header__menu-box-link" href="">Livingroom</a>
+                                        <a class="header__menu-box-link" href="">Officeroom</a>
+                                        <a class="header__menu-box-link" href="">Bedroom</a>
+                                        <a class="header__menu-box-link" href="">Diningroom</a>
+                                        <a class="header__menu-box-link" href="">Kitchen</a>
+                                    </div>
+                                </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header__menu-item">
                             <a href="#" class="header__menu-link">blog</a>

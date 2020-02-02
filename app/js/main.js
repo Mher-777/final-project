@@ -1,4 +1,5 @@
 $(function () {
+    const host = 'http://localhost:8011';
 
     $('.main-slider__inner').slick({
         rows: 0,
@@ -8,6 +9,15 @@ $(function () {
         dots: true,
         dotsClass: 'main-dots',
         autoplay: true,
+    });
+
+    $(window).on('scroll', function () {
+        let scroll = $(window).scrollTop();
+        if (scroll >= 450) {
+            $('.lookbook__header').addClass('position-sticky').animate();
+        } else {
+            $('.lookbook__header').removeClass('position-sticky');
+        }
     });
 
     $('.product__slider').slick({
@@ -106,57 +116,76 @@ $(function () {
     let textOne = $('.header-personal__item.icon-hart').text();
     let textTwo = $('.header-personal__item.icon-cart').text();
 
-    function textRemove (){
+    function textRemove() {
         $('.number-one').text('(' + textOne + ')');
         $('.number-two').text('(' + textTwo + ')');
     }
-    textRemove ();
+
+    textRemove();
 
     let search = $('.header__bottom-search');
     let searchContent = $('.header__bottom-search-content');
 
     $(search).on('click', function () {
-        $(searchContent).css('display', 'block');
+        $(searchContent).toggleClass('active')
     });
 
-    $('.header__bottom-search-content.active').click(function(){
-        $(this).addClass('active')
+    $(searchContent).hover(function () {
+        $(this).css('display', 'block')
     });
 
 
+    $('#header-btn__reg').on('click', function () {
+        const name = $("#name").val().trim();
+        const email = $("#email").val().trim();
+        const password = $("#password").val().trim();
+        const obj = {
+            'name': name,
+            'email': email,
+            'password': password
+        };
+        let passwordError = $('#password-error');
+        let emailError = $('#email-error');
+        let nameError = $('#name-error');
 
+        function formPost() {
+            $.ajax({
+                url: host + '/rest/users/',
+                data: JSON.stringify(obj),
+                type: 'POST',
+                contentType: "application/json;charset=utf-8",
+                error: function (xhr, status, error) {
+                    emailError.text('this email is already in use');
+                    $('#email').addClass('input-error');
+                },
+                success: function (data) {
+                    window.location.href = "https://mail.google.com/mail/u/0/#inbox";
+                },
+            });
+        }
 
+        if (password.length >= 8) {
+            formPost();
+        } else if (password === "") {
+            passwordError.text('Enter password!');
+            return false;
+        } else if (nameError === "") {
+            nameError.text('Enter name!');
+            return false;
+        } else if (emailError === "") {
+            emailError.text('Enter email!');
+            return false;
+        } else if (password.length <= 8) {
+            passwordError.text('A minimum 8 characters password contains');
+            $('#password').addClass('input-error');
+            return false;
+        }
+    });
 
-
-
-
-
-
-    // $('.test').on('click', function () {
-    //     $.ajax({
-    //         url: 'http://localhost:8011/rest/users/',
-    //         data: 'JSON',
-    //         type: 'POST',
-    //         success: function (data) {
-    //             console.log(data);
-    //         }
-    //     })
-    // })
-
-    // var obj = { name: "John", age: 30, city: "New York" };
-    //
-    // $('#header-btn__reg').on('click', function () {
-    //     $.ajax({
-    //         url: 'http://localhost:8011/rest/users/',
-    //         dataType: 'JSON',
-    //         data: JSON.stringify(obj),
-    //         type: 'POST',
-    //         contentType: "application/json;charset=utf-8",
-    //         success: function (data) {
-    //             console.log(data);
-    //         },
-    //
-    //     })
-    // })
 
 });
+
+
+// let stateObj = {test: 'html'};
+// history.pushState(stateObj, "", "collection");
+// history.replaceState(stateObj, "", "collection");
