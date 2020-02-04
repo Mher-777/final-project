@@ -86,8 +86,14 @@ $(function () {
         prevArrow: '<button class="blog-arrows blog-arrows__left"></button>',
         nextArrow: '<button class="blog-arrows blog-arrows__right"></button>',
     });
+    // $('.room__products-slider').slick({
+    //     slidesToShow: 4,
+    //     slidesToScroll: 2,
+    //     prevArrow: '<button class="room-arrows room-arrows__left"></button>',
+    //     nextArrow: '<button class="room-arrows room-arrows__right"></button>',
+    // });
 
-    wow = new WOW(
+    let wow = new WOW(
         {
             offset: 150,
         }
@@ -134,6 +140,10 @@ $(function () {
         $(this).css('display', 'block')
     });
 
+    $('.banner__back-to-top').on('click', function () {
+        $('html, body').animate({scrollTop:0}, '1000');
+    });
+
 
     $('#header-btn__reg').on('click', function () {
         const name = $("#name").val().trim();
@@ -157,9 +167,10 @@ $(function () {
                 error: function (xhr, status, error) {
                     emailError.text('this email is already in use');
                     $('#email').addClass('input-error');
+
                 },
                 success: function (data) {
-                    window.location.href = "https://mail.google.com/mail/u/0/#inbox";
+                    window.location.href = "lookbook-page.html";
                 },
             });
         }
@@ -182,9 +193,69 @@ $(function () {
         }
     });
 
+    $('#login').on('click', function () {
+        const emailInput = $('#email-input').val().trim();
+        const passwordInput = $('#password-input').val().trim();
+        let objLogin = {
+            'email': emailInput,
+            'password': passwordInput,
+        };
 
+        $.ajax({
+            url: host + '/rest/users/auth',
+            dataType: 'JSON',
+            data: JSON.stringify(objLogin),
+            type: 'POST',
+            contentType: "application/json;charset=utf-8",
+            error: function (request, status, error) {
+                $('#email-login__error').text('login or password incorrect')
+            },
+            success: function (token) {
+                let loginToken;
+                loginToken = token;
+                console.log(loginToken);
+                window.location.href = "lookbook-page.html";
+            },
+        });
+    })
 });
 
+$.ajax({
+    url: 'https://jsonplaceholder.typicode.com/photos',
+    type: "GET",
+    dataType: "JSON",
+    success: function (data) {
+        for (let i = 0; i < 10; i++) {
+            let dataImages = data[i]['thumbnailUrl'];
+            let dataTitle = data[i]['title'];
+            let dataUrl = data[i]['url'];
+            $('.dinning-room__products .room__products-slider').append(
+                `<div class="dinning-room__products-content">
+                    <div class="dinning-room__products-box">
+                        <a href="#" class="dinning-room__products-images">
+                            <img src="${dataImages}" alt="">
+                        </a>
+                        <a href="${dataUrl}" class="dinning-room__products-bottom">
+                            <div class="dinning-room__products-title">
+                                ${dataTitle}
+                            </div>
+                            <span class="dinning-room__products-subtitle">
+                                Square Steel Tube
+                            </span>
+                            <button class="dinning-room__products-btn">$ 126</button>
+                        </a>
+                    </div>
+                </div>`
+            );
+        }
+        $('.room__products-slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            prevArrow: '<button class="room-arrows room-arrows__left"></button>',
+            nextArrow: '<button class="room-arrows room-arrows__right"></button>',
+        });
+    }
+});
 
 // let stateObj = {test: 'html'};
 // history.pushState(stateObj, "", "collection");

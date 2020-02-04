@@ -26,17 +26,20 @@
                         Login
                     </button>
                     <div class="header__top-login-box  header__top-log">
-                        <form action="#" class="header__top-login-form">
+                        <form class="header__top-login-form">
                             <div class="header__top-login-form-row">
-                                <label class="header__top-login-form-text">Username</label>
-                                <input type="text" name="name" class="header__top-register-input" required>
+                                <label class="header__top-login-form-text">Email</label>
+                                <input id="email-input" type="email" name="email" class="header__top-register-input" required>
+
                             </div>
                             <div class="header__top-login-form-row">
                                 <label class="header__top-login-form-text">Password</label>
-                                <input type="password" name="password" class="header__top-register-input" required>
+                                <input id="password-input" type="password" name="password" class="header__top-register-input" required>
                             </div>
-                            <button class="header__top-form-btn" type="submit">Login</button>
+                            <span id="email-login__error" class="form-error__text"></span>
+                            <button id="login" class="header__top-form-btn" type="button">Login</button>
                             <a href="#" class="header__top-login-link">Forgot password?</a>
+
                         </form>
                     </div>
                     <button class="header__top-login-btn register-btn">
