@@ -3139,6 +3139,7 @@
 }
 
 .sidebar-page__main {
+  max-width: 1550px;
   width: 100%;
 
   &-bg {
@@ -3245,6 +3246,7 @@
 
 .sidebar-page__main-items {
   display: flex;
+  margin-bottom: 105px;
 }
 
 .sidebar-page__main-item {
@@ -3328,6 +3330,203 @@
     font-size: 24px;
     line-height: 24px;
     display: block;
+    transition: .3s all;
+  }
+}
+.sidebar-page__filter{
+  margin-bottom: 60px;
+  &-inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &-item{
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    font-size: 18px;
+    & + &{
+      margin-left: 30px;
+    }
+  }
+  &-btn{
+    border: none;
+    background-color: transparent;
+    position: relative;
+    padding-right: 25px;
+    color: #000;
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      width: 18px;
+      height: 1px;
+      background-color: #1a1a1a;
+      transition: .3s all;
+      left: 0;
+    }
+    &:hover{
+      &::before{
+        width: 100%;
+      }
+    }
+  }
+  &-number{
+    position: absolute;
+    font-size: 14px;
+    top: -10px;
+    right: 0;
+  }
+}
+.best-products__title{
+  padding-left: 30px;
+}
+.best-products__inner{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.best-product{
+  &__content{
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    &-images{
+      width: 100%;
+      min-height: 500px;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    &-title{
+      box-shadow: 0 1px 7px rgba(0, 0, 0, 0.07);
+      background-color: #fff;
+      letter-spacing: 7.2px;
+      line-height: 30px;
+      font-size: 36px;
+      color: #262626;
+      padding: 25px 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+  }
+  &__item{
+    max-width: 335px;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    &:hover{
+      .best-product__item-link{
+        transform: translateY(-50%) scale(1);
+      }
+    }
+    &-images{
+      min-height: 500px;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    &-box{
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: $color-black;
+    }
+    &-name{
+      font-size: 24px;
+      line-height: 24px;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      margin-bottom: 10px;
+      width: 280px;
+    }
+    &-description{
+      display: block;
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 25px;
+    }
+    &-price{
+      font-size: 24px;
+      color: $color-black;
+      position: relative;
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        /* Style for "Shape 9 co" */
+        width: 15px;
+        height: 1px;
+        background-color: #1a1a1a;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &::before{
+        left: -25px;
+      }
+      &::after{
+        right: -25px;
+      }
+    }
+  }
+}
+.best-product__item-link{
+  width: 50px;
+  height: 50px;
+  border: 1px solid $color-black;
+  background-color: transparent;
+  color: $color-black;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s all;
+  &::before{
+    @include icon;
+    font-size: 24px;
+  }
+  &.arrow-left{
+    left: 30px;
+    &::before{
+      content: '\34';
+
+    }
+  }
+  &.arrow-right{
+    right: 30px;
+    &::before{
+      content: '\35';
+    }
+  }
+}
+.best-product__brand{
+  margin-top: 100px;
+  background-color: #f3f3f3;
+  padding: 30px 0;
+  &-inner{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &-item{
+    width: 20%;
+    text-align: center;
+    padding: 50px 0;
+    cursor: pointer;
+    &:hover{
+      box-shadow: 0 1px 3px rgba(26, 26, 26, 0.07);
+      background-color: #fff;
+      .best-product__brand-icon{
+        opacity: 1;
+      }
+    }
+  }
+  &-icon{
     transition: .3s all;
   }
 }
