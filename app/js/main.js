@@ -63,6 +63,12 @@ $(function () {
         starWidth: "12px",
         ratedFill: "#f6cc4c",
     });
+    $(".top-collection__item-star").rateYo({
+        rating: 5,
+        starWidth: "13px",
+        ratedFill: "#f6cc4c",
+        readOnly: true,
+    });
 
     $('.categories-pagination__slider-btn').on('click', function () {
         $(this).addClass('active');
@@ -86,12 +92,25 @@ $(function () {
         prevArrow: '<button class="blog-arrows blog-arrows__left"></button>',
         nextArrow: '<button class="blog-arrows blog-arrows__right"></button>',
     });
-    // $('.room__products-slider').slick({
-    //     slidesToShow: 4,
-    //     slidesToScroll: 2,
-    //     prevArrow: '<button class="room-arrows room-arrows__left"></button>',
-    //     nextArrow: '<button class="room-arrows room-arrows__right"></button>',
-    // });
+    $('.our-blogger__slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: '<button class="our-blog__arrows our-blog__arrows-left"></button>',
+        nextArrow: '<button class="our-blog__arrows our-blog__arrows-right"></button>',
+        appendArrows: '.our-blogger__arrows',
+        autoplay: true,
+    });
+
+    $('.our-testimonials__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+        dotsClass: 'our-testimonials__dots',
+        vertical:true,
+        verticalSwiping: true,
+        autoplay: true,
+    });
 
     let wow = new WOW(
         {
@@ -255,6 +274,7 @@ $.ajax({
             nextArrow: '<button class="room-arrows room-arrows__right"></button>',
         });
     }
+
 });
 
 // let stateObj = {test: 'html'};
