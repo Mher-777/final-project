@@ -63,7 +63,7 @@ $(function () {
         starWidth: "12px",
         ratedFill: "#f6cc4c",
     });
-    $(".top-collection__item-star").rateYo({
+    $(".top-collection__item-star, .products-grid__info-rate").rateYo({
         rating: 5,
         starWidth: "13px",
         ratedFill: "#f6cc4c",
@@ -111,7 +111,6 @@ $(function () {
         verticalSwiping: true,
         autoplay: true,
     });
-
     let wow = new WOW(
         {
             offset: 150,
@@ -134,8 +133,8 @@ $(function () {
         $('.header__top-register').removeClass('active')
     });
 
+
     wow.init();
-    let mixer = mixitup('.categories__inner');
 
 
     let textOne = $('.header-personal__item.icon-hart').text();
@@ -151,19 +150,25 @@ $(function () {
     let search = $('.header__bottom-search');
     let searchContent = $('.header__bottom-search-content');
 
-    $(search).on('click', function () {
-        $(searchContent).toggleClass('active')
+    search.on('click', function () {
+        searchContent.addClass('active')
     });
 
-    $(searchContent).hover(function () {
-        $(this).css('display', 'block')
+    searchContent.on('mouseleave', function () {
+        searchContent.removeClass('active')
     });
 
-    $('.banner__back-to-top').on('click', function () {
-        $('html, body').animate({scrollTop:0}, '1000');
+    $('.banner__back-to-top').on('click', function (event) {
+        $('html, body').animate({scrollTop:0}, 1500);
+        event.preventDefault()
     });
 
+    $('.products-grid__pagination-btn').on('click', function () {
+        $('.products-grid__pagination-btn').removeClass('active');
+        $(this).addClass('active')
+    });
 
+    let mixer = mixitup('.categories__inner');
     $('#header-btn__reg').on('click', function () {
         const name = $("#name").val().trim();
         const email = $("#email").val().trim();
