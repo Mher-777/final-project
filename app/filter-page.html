@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FENICHA</title>
+    <link href="https://fonts.googleapis.com/css?family=Electrolize|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/libs.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-inner">
+                <div class="header__top-info">
+                    <a href="mailto: tonydat@fenicha.com" class="header__top-info-item animated slideInDown">tonydat@fenicha.com</a>
+                    <a href="tel:+400123456789" class="header__top-info-item animated slideInDown">(+400) 123 456
+                        789</a>
+                    <a href="#" class="header__top-info-item animated slideInDown">24/7 online support</a>
+                </div>
+                <div class="header__top-login animated fadeInRight">
+                    <button class="header__top-login-btn login-btn">
+                        Login
+                    </button>
+                    <div class="header__top-login-box  header__top-log">
+                        <form class="header__top-login-form">
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Email</label>
+                                <input id="email-input" type="email" name="email" class="header__top-register-input"
+                                       required>
+
+                            </div>
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Password</label>
+                                <input id="password-input" type="password" name="password"
+                                       class="header__top-register-input" required>
+                            </div>
+                            <span id="email-login__error" class="form-error__text"></span>
+                            <button id="login" class="header__top-form-btn" type="button">Login</button>
+                            <a href="#" class="header__top-login-link">Forgot password?</a>
+
+                        </form>
+                    </div>
+                    <button class="header__top-login-btn register-btn">
+                        register
+                    </button>
+                    <div class="header__top-login-box  header__top-register">
+                        <form id="header__form-login" class="header__top-login-form">
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Username</label>
+                                <input id="name" type="text" name="name" class="header__top-register-input" required>
+                                <span id="name-error" class="form-error__text"></span>
+                            </div>
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">E-Mail</label>
+                                <input id="email" type="text" name="email" class="header__top-register-input" required>
+                                <span id="email-error" class="form-error__text"></span>
+                            </div>
+                            <div class="header__top-login-form-row">
+                                <label class="header__top-login-form-text">Password</label>
+                                <input id="password" type="password" name="password" class="header__top-register-input"
+                                       required>
+                                <span id="password-error" class="form-error__text"></span>
+                            </div>
+                            <span class="header__top-login-description">A password will be e-mailed to you</span>
+                            <button id="header-btn__reg" class="header__top-form-btn" type="button">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__center">
+        <div class="container">
+            <div class="header__center-inner">
+                <div class="header-social animated fadeInLeft">
+                    <a href="#" class="header-social__link ">
+                        <span class="header-social__link-box header-social__link-facebook">
+                            Follow on facebook
+                        </span>
+                    </a>
+                    <a href="#" class="header-social__link header-social__link-twitter">
+                         <span class="header-social__link-box">
+                            Follow on twitter
+                        </span>
+                    </a>
+                    <a href="#" class="header-social__link header-social__link-google">
+                        <span class="header-social__link-box">
+                            Follow on google
+                        </span>
+                    </a>
+                    <a href="#" class="header-social__link header-social__link-pinterest">
+                        <span class="header-social__link-box">
+                            Follow on pinterest
+                        </span>
+                    </a>
+                </div>
+                <div class="header-logo animated fadeInDown">
+                    <a href="#" class="header-logo__link">
+                        <img src="./images/logo.jpg" alt="логотип">
+                    </a>
+                </div>
+                <div class="header-personal animated fadeInRight">
+                    <div class="header-personal__item-box">
+                        <a href="#" class="header-personal__item icon-hart">
+                            <span>17</span>
+                        </a>
+                        <div class="header-personal__item-box-text">
+                            there are <span class="number-one">()</span> items
+                        </div>
+                    </div>
+                    <div class="header-personal__item-box">
+                        <a href="#" class="header-personal__item icon-cart">
+                            <span>21</span>
+                        </a>
+                        <div class="header-personal__item-box-text">
+                            there are <span class="number-two">()</span> items
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="header__bottom">
+        <div class="container">
+            <div class="header__bottom-inner">
+                <a href="#" class="header__bottom-icon animated fadeInDown"></a>
+                <nav class="header__menu">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">Home</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Decor</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">about</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Decor</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">collection</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Decor</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">furniture</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Decor</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">page</a>
+                            <div class="header__menu-box">
+                                <ul class="header__menu-box-list">
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Frooming</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Interior</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Furniture</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Tableware</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Decor</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                    <li class="header__menu-box-item">
+                                        <a href="#" class="header__menu-box-link">Essentials</a>
+                                        <div>
+                                            <a class="header__menu-box-link" href="">Bathroom</a>
+                                            <a class="header__menu-box-link" href="">Livingroom</a>
+                                            <a class="header__menu-box-link" href="">Officeroom</a>
+                                            <a class="header__menu-box-link" href="">Bedroom</a>
+                                            <a class="header__menu-box-link" href="">Diningroom</a>
+                                            <a class="header__menu-box-link" href="">Kitchen</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">blog</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">service</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__bottom-search">
+                    <div class="header__bottom-search-content">
+                        <input type="text" class="header__bottom-search-input" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="hero">
+    <div class="container-fluid">
+        <div class="hero__bg" style="background-image: url(./images/hero-bg.jpg);">
+            <div class="hero__bg-inner">
+                <div class="hero__bg-description">new style</div>
+                <div class="hero__bg-title">product grid filter</div>
+                <div class="hero__bg-breadcrumb">
+                    <a href="#" class="hero__bg-breadcrumb-link">Homepage</a>
+                    <a href="#" class="hero__bg-breadcrumb-link">Furniture</a>
+                    <a href="#" class="hero__bg-breadcrumb-link">Product grid with sidebar</a>
+                </div>
+            </div>
+            <div class="hero__bg-line"></div>
+        </div>
+    </div>
+</section>
+<section class="product-filter">
+    <div class="container">
+        <div class="product-filter__inner">
+            <aside class="product-filter__aside">
+                <div class="filter__aside-search">
+                    <form class="filter__aside-search-form">
+                        <input type="text" class="filter__aside-search-input" placeholder="Search" required>
+                        <button class="filter__aside-search-btn" type="submit"></button>
+                    </form>
+                </div>
+                <div class="filter__aside-categories">
+                    <div class="filter__aside-manufacture">
+                        <div class="filter__aside-title"><strong>new CATEGORies</strong>
+                            <span></span>
+                            <div class="filter__aside-line"></div>
+                        </div>
+                    </div>
+                    <div class="filter__aside-categories-content">
+                        <ul class="filter__aside-categories-list">
+                            <li class="filter__aside-categories-item">
+                                <span>contemporary</span>
+                                <div class="filter__aside-categories-box">
+                                    <a href="#" class="filter__aside-categories-link">Bathroom <span>75</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Livingroom <span>24</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Officeroom <span>13</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Bedroom <span>36</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Diningroom <span>72</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Kitchen <span>15</span></a>
+                                </div>
+                            </li>
+                            <li class="filter__aside-categories-item">
+                                <span>essentials</span>
+                                <div class="filter__aside-categories-box">
+                                    <a href="#" class="filter__aside-categories-link">Bathroom <span>75</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Livingroom <span>24</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Officeroom <span>13</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Bedroom <span>36</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Diningroom <span>72</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Kitchen <span>15</span></a>
+                                </div>
+                            </li>
+                            <li class="filter__aside-categories-item">
+                                <span>grooming</span>
+                                <div class="filter__aside-categories-box">
+                                    <a href="#" class="filter__aside-categories-link">Bathroom <span>75</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Livingroom <span>24</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Officeroom <span>13</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Bedroom <span>36</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Diningroom <span>72</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Kitchen <span>15</span></a>
+                                </div>
+                            </li>
+                            <li class="filter__aside-categories-item">
+                                <span>interior</span>
+                                <div class="filter__aside-categories-box">
+                                    <a href="#" class="filter__aside-categories-link">Bathroom <span>75</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Livingroom <span>24</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Officeroom <span>13</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Bedroom <span>36</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Diningroom <span>72</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Kitchen <span>15</span></a>
+                                </div>
+                            </li>
+                            <li class="filter__aside-categories-item">
+                                <span>furniture</span>
+                                <div class="filter__aside-categories-box">
+                                    <a href="#" class="filter__aside-categories-link">Bathroom <span>75</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Livingroom <span>24</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Officeroom <span>13</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Bedroom <span>36</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Diningroom <span>72</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Kitchen <span>15</span></a>
+                                </div>
+                            </li>
+                            <li class="filter__aside-categories-item">
+                                <span>tableware</span>
+                                <div class="filter__aside-categories-box">
+                                    <a href="#" class="filter__aside-categories-link">Bathroom <span>75</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Livingroom <span>24</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Officeroom <span>13</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Bedroom <span>36</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Diningroom <span>72</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Kitchen <span>15</span></a>
+                                </div>
+                            </li>
+                            <li class="filter__aside-categories-item">
+                                <span>decor</span>
+                                <div class="filter__aside-categories-box">
+                                    <a href="#" class="filter__aside-categories-link">Bathroom <span>75</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Livingroom <span>24</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Officeroom <span>13</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Bedroom <span>36</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Diningroom <span>72</span></a>
+                                    <a href="#" class="filter__aside-categories-link">Kitchen <span>15</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filter__aside-size">
+                    <div class="filter__aside-manufacture">
+                        <div class="filter__aside-title"><strong>size product</strong>
+                            <span></span>
+                            <div class="filter__aside-line"></div>
+                        </div>
+                    </div>
+                    <div class="filter__aside-size-content">
+                        <span class="filter__aside-size-text">
+                            Select your size
+                        </span>
+                        <div class="filter__aside-size-inner">
+                            <button type="button" class="filter__aside-size-btn">M</button>
+                            <button type="button" class="filter__aside-size-btn">Ms</button>
+                            <button type="button" class="filter__aside-size-btn active">S</button>
+                            <button type="button" class="filter__aside-size-btn">xs</button>
+                            <button type="button" class="filter__aside-size-btn">L</button>
+                            <button type="button" class="filter__aside-size-btn">XL</button>
+                            <button type="button" class="filter__aside-size-btn">xxl</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__aside-range">
+                    <div class="filter__aside-manufacture">
+                        <div class="filter__aside-title"><strong>price range</strong>
+                            <span></span>
+                            <div class="filter__aside-line"></div>
+                        </div>
+                    </div>
+                    <div class="filter__aside-range-text">
+                        Select your price
+                    </div>
+                    <div class="filter__aside-range-slider">
+                        <input type="text" class="filter__aside-range-input" value=""/>
+                    </div>
+                    <div class="filter__aside-range-controls">
+                        <div>
+                            <input type="text" class="filter__aside-range-from" disabled="disabled" value="0"/>
+                        </div>
+                        <div>
+                            <input type="text" class="filter__aside-range-to" disabled="disabled" value="0"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__aside-color">
+                    <div class="filter__aside-manufacture">
+                        <div class="filter__aside-title"><strong>color product</strong>
+                            <span></span>
+                            <div class="filter__aside-line"></div>
+                        </div>
+                    </div>
+                    <div class="filter__aside-color-row">
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="green">
+                            <label for="green">green</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="beige">
+                            <label for="beige">Beige</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="white">
+                            <label for="white">White</label>
+                        </div>
+                    </div>
+                    <div class="filter__aside-color-row">
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="blue">
+                            <label for="blue">blue</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="brown">
+                            <label for="brown">brown</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="black">
+                            <label for="black">black</label>
+                        </div>
+                    </div>
+                    <div class="filter__aside-color-row">
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="grey">
+                            <label for="grey">Grey</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="cream">
+                            <label for="cream">cream</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="yellow">
+                            <label for="yellow">yellow</label>
+                        </div>
+                    </div>
+                    <div class="filter__aside-color-row">
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="red">
+                            <label for="red">red</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="navy">
+                            <label for="navy">navy</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="spec">
+                            <label for="spec">spec</label>
+                        </div>
+                    </div>
+                    <div class="filter__aside-color-row">
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="pink">
+                            <label for="pink">pink</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="orange">
+                            <label for="orange">orange</label>
+                        </div>
+                        <div class="filter__aside-color-item">
+                            <input type="checkbox" id="light">
+                            <label for="light">light</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__aside-manufacture">
+                    <div class="filter__aside-title"><strong>manufactory</strong>
+                        <span></span>
+                        <div class="filter__aside-line"></div>
+                    </div>
+                    <ul class="filter__aside-manufacture-list">
+                        <li class="filter__aside-manufacture-item">
+                            <a href="#" class="filter__aside-manufacture-link">New Look</a>
+                        </li>
+                        <li class="filter__aside-manufacture-item">
+                            <a href="#" class="filter__aside-manufacture-link">Nike</a>
+                        </li>
+                        <li class="filter__aside-manufacture-item">
+                            <a href="#" class="filter__aside-manufacture-link">Polo Ralph Lauren</a>
+                        </li>
+                        <li class="filter__aside-manufacture-item">
+                            <a href="#" class="filter__aside-manufacture-link">Religion</a>
+                        </li>
+                        <li class="filter__aside-manufacture-item">
+                            <a href="#" class="filter__aside-manufacture-link">River Island</a>
+                        </li>
+                        <li class="filter__aside-manufacture-item">
+                            <a href="#" class="filter__aside-manufacture-link">Selected Homme</a>
+                        </li>
+                        <li class="filter__aside-manufacture-item">
+                            <a href="#" class="filter__aside-manufacture-link">Vans</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter__aside-clouds">
+                    <div class="filter__aside-title"><strong>tags clouds</strong>
+                        <span></span>
+                        <div class="filter__aside-line"></div>
+                    </div>
+                    <div class="filter__aside-clouds-inner">
+                        <div class="filter__aside-clouds-row">
+                            <button class="filter__aside-clouds-btn">
+                                <span>15</span>
+                                Bathroom
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>05</span>
+                                Contemporary
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>17</span>
+                                Decor
+                            </button>
+                        </div>
+                        <div class="filter__aside-clouds-row">
+                            <button class="filter__aside-clouds-btn">
+                                <span>45</span>
+                                Grooming
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>73</span>
+                                Interior
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>33</span>
+                                Kitchen
+                            </button>
+                        </div>
+                        <div class="filter__aside-clouds-row">
+                            <button class="filter__aside-clouds-btn">
+                                <span>32</span>
+                                Essentials
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>53</span>
+                                Leather
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>24</span>
+                                Tableware
+                            </button>
+                        </div>
+                        <div class="filter__aside-clouds-row">
+                            <button class="filter__aside-clouds-btn">
+                                <span>95</span>
+                                Lounge
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>66</span>
+                                Pratical
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>66</span>
+                                Stools
+                            </button>
+                        </div>
+                        <div class="filter__aside-clouds-row">
+                            <button class="filter__aside-clouds-btn">
+                                <span>33</span>
+                                Chair
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>54</span>
+                                Sofa
+                            </button>
+                            <button class="filter__aside-clouds-btn">
+                                <span>78</span>
+                                Furniture
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="product-filter__content">
+                <div class="product-filter__content-top">
+                    <div class="product-filter__content-top-text">
+                        There are 8 product of page
+                    </div>
+
+                    <label>
+                        <select class="product-filter__content-select">
+                            <option>
+                                Filter by
+                            </option>
+                            <option>
+                                Filter by01
+                            </option>
+                            <option>
+                                Filter by02
+                            </option>
+                        </select>
+                    </label>
+                </div>
+                <div class="product-filter__content-inner">
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-item">
+                        <div class="product-filter__content-images"
+                             style="background-image: url(./images/product-filter__content-img.jpg);">
+                            <div class="product-filter__content-icons">
+                                <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                            </div>
+                        </div>
+                        <div class="product-filter__content-wrapper">
+                            <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+                            <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                            <div class="product-filter__content-price">
+                                <strong>$ 126</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-filter__content-pagination">
+                        <button class="product-filter__content-pagination-btn">1</button>
+                        <button class="product-filter__content-pagination-btn active">2</button>
+                        <button class="product-filter__content-pagination-btn">3</button>
+                        <button class="product-filter__content-pagination-btn">4</button>
+                        <button class="product-filter__content-pagination-btn">5</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="banner">
+    <div class="container-fluid">
+        <div class="banner-wrapper wow zoomInDown" style="background-image: url(./images/banner-bg.jpg);">
+            <div class="container">
+                <div class="banner__inner">
+                    <div class="banner__item banner__item-phone">
+                        <a href="tel:+840123456799" class="banner__item-phone-link"><span>(+84)</span> 0123 456 799</a>
+                        <a href="tel:+840123456799" class="banner__item-phone-link"><span>(+84)</span> 0123 456 799</a>
+                    </div>
+                    <div class="banner__item banner__item-envelope">
+                        <a href="mailto:tkietdesign@gmail.com"
+                           class="banner__item-envelope-link">tkietdesign@gmail.com</a>
+                        <a href="mailto:tkietdesign@gmail.com" class="banner__item-envelope-link">thankforlove2012</a>
+                    </div>
+                    <a href="#" class="banner__back-to-top"></a>
+                    <div class="banner__item banner__item-like">
+                        <div class="banner__item-like-text">
+                            you like this ? purchase <span>fenicha</span> shop
+                        </div>
+                        <div class="banner__item-like-description">
+                            Lorem ipsum is simply text lorem ipsum text.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner wow fadeInUp">
+            <a href="#" class="footer__logo">
+                <img src="./images/logo.jpg" alt="">
+            </a>
+            <div class="footer__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna aliquam erat volutpat. Wisi enim ad minim veniam quis nostrud exerci tation
+            </div>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link social_facebook"></a>
+                <a href="#" class="footer__social-link social_twitter"></a>
+                <a href="#" class="footer__social-link social_googleplus"></a>
+                <a href="#" class="footer__social-link social_pinterest"></a>
+                <a href="#" class="footer__social-link social_rss"></a>
+                <a href="#" class="footer__social-link social_vimeo"></a>
+                <a href="#" class="footer__social-link social_dribbble"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copy">
+        <div class="container">
+            <div class="footer__copy-inner">
+                <div class="footer__copy-payment wow fadeInLeft" data-wow-offset="100">
+                    <span class="footer__copy-icon icon-cc-visa"></span>
+                    <span class="footer__copy-icon icon-cc-mastercard"></span>
+                    <span class="footer__copy-icon icon-cc-discover"></span>
+                    <span class="footer__copy-icon icon-cc-amex"></span>
+                    <span class="footer__copy-icon icon-cc-paypal"></span>
+                    <span class="footer__copy-icon icon-cc-stripe "></span>
+                </div>
+                <div class="footer__copy-description">
+                    Copyright © 2016 Tonydat. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/libs.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+
+</html>

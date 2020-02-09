@@ -63,7 +63,7 @@ $(function () {
         starWidth: "12px",
         ratedFill: "#f6cc4c",
     });
-    $(".top-collection__item-star, .products-grid__info-rate").rateYo({
+    $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate").rateYo({
         rating: 5,
         starWidth: "13px",
         ratedFill: "#f6cc4c",
@@ -167,7 +167,84 @@ $(function () {
         $('.products-grid__pagination-btn').removeClass('active');
         $(this).addClass('active')
     });
+    $('.product-list__pagination').on('click', function () {
+        $('.product-list__pagination').removeClass('active');
+        $(this).addClass('active')
+    });
+    $('.filter__aside-categories-item').on('click', function () {
+        $(this).slideDown();
+        $('.filter__aside-categories-item').removeClass('active');
+        $(this).toggleClass('active');
+    });
+    $('.filter__aside-size-btn').on('click', function () {
+        $('.filter__aside-size-btn').removeClass('active');
+        $(this).addClass('active');
+    });
+    let $range = $(".filter__aside-range-input");
+    let $inputFrom = $(".filter__aside-range-from");
+    let $inputTo = $(".filter__aside-range-to");
+    let instance;
+    let min = 0;
+    let max = 1000;
+    let from = 0;
+    let to = 0;
+    $(".filter__aside-range-slider").ionRangeSlider({
+        skin: "round",
+        type: "double",
+        min: min,
+        max: max,
+        from: 50,
+        to: 750,
+        prefix: "$",
+        step: 10,
+        onStart: updateInputs,
+        onChange: updateInputs,
+        onFinish: updateInputs
 
+    });
+    instance = $range.data("ionRangeSlider");
+
+    function updateInputs (data) {
+        from = data.from;
+        to = data.to;
+
+        $inputFrom.prop("value", from);
+        $inputTo.prop("value", to);
+    }
+
+    $inputFrom.on("input", function () {
+        let val = $(this).prop("value");
+
+        // validate
+        if (val < min) {
+            val = min;
+        } else if (val > to) {
+            val = to;
+        }
+
+        instance.update({
+            from: val
+        });
+    });
+
+    $inputTo.on("input", function () {
+        let val = $(this).prop("value");
+
+        // validate
+        if (val < from) {
+            val = from;
+        } else if (val > max) {
+            val = max;
+        }
+
+        instance.update({
+            to: val
+        });
+    });
+    $('.filter__aside-manufacture-item').on('click', function () {
+        $('.filter__aside-manufacture-item').removeClass('active')
+        $(this).toggleClass('active');
+    });
     let mixer = mixitup('.categories__inner');
     $('#header-btn__reg').on('click', function () {
         const name = $("#name").val().trim();

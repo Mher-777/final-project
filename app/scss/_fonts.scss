@@ -41,6 +41,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-search:before {
+  content: "\f002";
+}
 .icon-repeat:before {
   content: "\f01e";
 }
