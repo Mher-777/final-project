@@ -63,7 +63,7 @@ $(function () {
         starWidth: "12px",
         ratedFill: "#f6cc4c",
     });
-    $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate").rateYo({
+    $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate, .product-details__reviews-rate").rateYo({
         rating: 5,
         starWidth: "13px",
         ratedFill: "#f6cc4c",
@@ -242,9 +242,41 @@ $(function () {
         });
     });
     $('.filter__aside-manufacture-item').on('click', function () {
-        $('.filter__aside-manufacture-item').removeClass('active')
+        $('.filter__aside-manufacture-item').removeClass('active');
         $(this).toggleClass('active');
     });
+    $('.product-details__slider-wrapper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.product-details__slider-items',
+        arrows: false,
+        fade: true,
+    });
+    $('.product-details__slider-items').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        rows: 0,
+        asNavFor: '.product-details__slider-wrapper',
+        focusOnSelect: true
+    });
+    $('.product-description__wrapper .tab').on('click', function(event) {
+        let id = $(this).attr('data-id');
+        $('.product-description__wrapper').find('.tab-item').removeClass('active-tab').hide();
+        $('.product-description__wrapper .product-description__tabs').find('.tab').removeClass('active');
+        $(this).addClass('active');
+        $('#'+id).addClass('active-tab').fadeIn();
+        return false;
+    });
+
+    $('.product-description__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        rows: 0,
+        fade: true,
+        prevArrow: '<button class="product-description__arrows product-description__arrows-left"></button>',
+        nextArrow: '<button class="product-description__arrows product-description__arrows-right"></button>',
+    });
+
     let mixer = mixitup('.categories__inner');
     $('#header-btn__reg').on('click', function () {
         const name = $("#name").val().trim();
