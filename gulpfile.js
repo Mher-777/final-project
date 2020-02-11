@@ -25,6 +25,7 @@ gulp.task('style', function () {
         'node_modules/animate.css/animate.css',
         'node_modules/rateyo/min/jquery.rateyo.min.css',
         'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
+        'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
         // 'node_modules/magnific-popup/dist/magnific-popup.css',
     ])
         .pipe(concat('libs.min.css'))
@@ -46,6 +47,7 @@ gulp.task('script', function () {
         'node_modules/rateyo/src/jquery.rateyo.js',
         'node_modules/mixitup/dist/mixitup.js',
         'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+        'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

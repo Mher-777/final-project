@@ -63,11 +63,21 @@ $(function () {
         starWidth: "12px",
         ratedFill: "#f6cc4c",
     });
-    $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate, .product-details__reviews-rate").rateYo({
+    $('.product__reviews-item-content').mCustomScrollbar({
+        axis:"y",
+        theme:"dark-thin"
+    });
+
+    $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate, .product-details__reviews-rate, .product__reviews-item-rate").rateYo({
         rating: 5,
         starWidth: "13px",
         ratedFill: "#f6cc4c",
         readOnly: true,
+    });
+    $('.reviews-add__form-star').rateYo({
+        rating: 5,
+        starWidth: "13px",
+        ratedFill: "#f6cc4c",
     });
 
     $('.categories-pagination__slider-btn').on('click', function () {
@@ -107,7 +117,7 @@ $(function () {
         dots: true,
         arrows: false,
         dotsClass: 'our-testimonials__dots',
-        vertical:true,
+        vertical: true,
         verticalSwiping: true,
         autoplay: true,
     });
@@ -159,7 +169,7 @@ $(function () {
     });
 
     $('.banner__back-to-top').on('click', function (event) {
-        $('html, body').animate({scrollTop:0}, 1500);
+        $('html, body').animate({scrollTop: 0}, 1500);
         event.preventDefault()
     });
 
@@ -204,7 +214,7 @@ $(function () {
     });
     instance = $range.data("ionRangeSlider");
 
-    function updateInputs (data) {
+    function updateInputs(data) {
         from = data.from;
         to = data.to;
 
@@ -259,12 +269,12 @@ $(function () {
         asNavFor: '.product-details__slider-wrapper',
         focusOnSelect: true
     });
-    $('.product-description__wrapper .tab').on('click', function(event) {
+    $('.product-description__wrapper .tab').on('click', function (event) {
         let id = $(this).attr('data-id');
         $('.product-description__wrapper').find('.tab-item').removeClass('active-tab').hide();
         $('.product-description__wrapper .product-description__tabs').find('.tab').removeClass('active');
         $(this).addClass('active');
-        $('#'+id).addClass('active-tab').fadeIn();
+        $('#' + id).addClass('active-tab').fadeIn();
         return false;
     });
 
