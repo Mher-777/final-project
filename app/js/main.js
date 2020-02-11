@@ -64,8 +64,8 @@ $(function () {
         ratedFill: "#f6cc4c",
     });
     $('.product__reviews-item-content').mCustomScrollbar({
-        axis:"y",
-        theme:"dark-thin"
+        axis: "y",
+        theme: "dark-thin"
     });
 
     $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate, .product-details__reviews-rate, .product__reviews-item-rate").rateYo({
