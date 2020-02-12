@@ -286,6 +286,20 @@ $(function () {
         prevArrow: '<button class="product-description__arrows product-description__arrows-left"></button>',
         nextArrow: '<button class="product-description__arrows product-description__arrows-right"></button>',
     });
+    $('.about-shop__slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        rows: 0,
+        variableWidth: true,
+        arrows: false,
+        autoplay: true,
+    });
+    $('.about-testimonials__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        appendArrows: '.about-testimonials__slider-arrows',
+    });
 
     let mixer = mixitup('.categories__inner');
     $('#header-btn__reg').on('click', function () {
