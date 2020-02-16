@@ -518,39 +518,204 @@
     <div class="container-fluid">
         <div class="hero__bg" style="background-image: url(./images/hero-bg.jpg);">
             <div class="hero__bg-inner">
-                <div class="hero__bg-description">find not found</div>
-                <div class="hero__bg-title">404 error page</div>
+                <div class="hero__bg-description">shopping cart</div>
+                <div class="hero__bg-title">shopping cart</div>
                 <div class="hero__bg-breadcrumb">
                     <a href="#" class="hero__bg-breadcrumb-link">Homepage</a>
-                    <a href="#" class="hero__bg-breadcrumb-link">404 error page</a>
-                    <a href="#" class="hero__bg-breadcrumb-link">404 error</a>
+                    <a href="#" class="hero__bg-breadcrumb-link">Go shopping</a>
+                    <a href="#" class="hero__bg-breadcrumb-link">Shopping cart</a>
                 </div>
             </div>
-            <div class="hero__bg-line icon-document"></div>
+            <div class="hero__bg-line icon-currency"></div>
         </div>
     </div>
 </section>
-<section class="error-404">
+<section class="checkout-step">
     <div class="container">
-        <div class="error-404__top">
-            <div class="error-404__title">404 error</div>
-            <div class="error-404__text">The page you are looking for does not exist</div>
+        <div class="checkout-step__inner">
+            <div class="checkout-step__item">
+                <div class="checkout-step__number --on"><span>01</span></div>
+                <div class="checkout-step__title">shopping cart</div>
+                <div class="checkout-step__description">Manager your items</div>
+            </div>
+            <div class="checkout-step__item --off">
+                <div class="checkout-step__number"><span>02</span></div>
+                <div class="checkout-step__title">checkout</div>
+                <div class="checkout-step__description">Checkout your items</div>
+            </div>
+            <div class="checkout-step__item --off">
+                <div class="checkout-step__number"><span>03</span></div>
+                <div class="checkout-step__title">complete order</div>
+                <div class="checkout-step__description">Review & Submit your order</div>
+            </div>
         </div>
-        <div class="error-404__inner">
-            <div class="error-404__number">404
-                <div class="error-404__number-text"><strong>error</strong></div>
+    </div>
+</section>
+<section class="shopping-cart">
+    <div class="container">
+        <div class="shopping-cart__inner">
+            <div class="shopping-cart__content cart-products">
+                <ul class="cart-products__list">
+                    <li class="cart-products__item">product</li>
+                    <li class="cart-products__item">Title</li>
+                    <li class="cart-products__item">Quantity</li>
+                    <li class="cart-products__item">Price</li>
+                    <li class="cart-products__item">delete</li>
+                </ul>
+                <div class="cart-products__wrapper">
+                    <div class="cart-product">
+                        <div class="cart-product__images">
+                            <img src="./images/product-list__img01.jpg" alt="">
+                        </div>
+                        <div class="cart-product__title">
+                            <span class="cart-product__title-name">aster 3 seater</span>
+                            <span class="cart-product__title-description">Bambeco BIC Camel Red Sofa</span>
+                        </div>
+                        <div class="cart-product__quantity">
+                            <span class="cart-product__quantity-minus icon-quantity"></span>
+                            <input class="cart-product__quantity-number product-quantity" type="number" value="1">
+                            <span class="cart-product__quantity-plus icon-quantity"></span>
+                        </div>
+                        <div class="cart-product__price total-price" data-price="120">
+                            120
+                        </div>
+                        <div class="cart-product__delete">
+                            <button class="cart-product__delete-btn" type="button"></button>
+                        </div>
+                    </div>
+                    <div class="cart-product">
+                        <div class="cart-product__images">
+                            <img src="./images/product-list__img01.jpg" alt="">
+                        </div>
+                        <div class="cart-product__title">
+                            <span class="cart-product__title-name">aster 3 seater</span>
+                            <span class="cart-product__title-description">Bambeco BIC Camel Red Sofa</span>
+                        </div>
+                        <div class="cart-product__quantity">
+                            <span class="cart-product__quantity-minus icon-quantity"></span>
+                            <input class="cart-product__quantity-number product-quantity" type="number" value="2">
+                            <span class="cart-product__quantity-plus icon-quantity"></span>
+                        </div>
+                        <div class="cart-product__price total-price" data-price="120">
+                            120
+                        </div>
+                        <div class="cart-product__delete">
+                            <button class="cart-product__delete-btn" type="button"></button>
+                        </div>
+                    </div>
+                    <div class="cart-product">
+                        <div class="cart-product__images">
+                            <img src="./images/product-list__img01.jpg" alt="">
+                        </div>
+                        <div class="cart-product__title">
+                            <span class="cart-product__title-name">aster 3 seater</span>
+                            <span class="cart-product__title-description">Bambeco BIC Camel Red Sofa</span>
+                        </div>
+                        <div class="cart-product__quantity">
+                            <span class="cart-product__quantity-minus icon-quantity"></span>
+                            <input class="cart-product__quantity-number product-quantity" type="number" value="2">
+                            <span class="cart-product__quantity-plus icon-quantity"></span>
+                        </div>
+                        <div class="cart-product__price total-price" data-price="120">
+                            120
+                        </div>
+                        <div class="cart-product__delete">
+                            <button class="cart-product__delete-btn" type="button"></button>
+                        </div>
+                    </div>
+                    <div class="cart-product">
+                        <div class="cart-product__images">
+                            <img src="./images/product-list__img01.jpg" alt="">
+                        </div>
+                        <div class="cart-product__title">
+                            <span class="cart-product__title-name">aster 3 seater</span>
+                            <span class="cart-product__title-description">Bambeco BIC Camel Red Sofa</span>
+                        </div>
+                        <div class="cart-product__quantity">
+                            <span class="cart-product__quantity-minus icon-quantity"></span>
+                            <input class="cart-product__quantity-number product-quantity" type="number" value="2">
+                            <span class="cart-product__quantity-plus icon-quantity"></span>
+                        </div>
+                        <div class="cart-product__price total-price" data-price="120">
+                            120
+                        </div>
+                        <div class="cart-product__delete">
+                            <button class="cart-product__delete-btn" type="button"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-products__bottom">
+                    <a href="#" class="cart-products__bottom-btn btn-continue">Continue shopping</a>
+                    <a href="#" class="cart-products__bottom-btn btn-update">update shopping cart</a>
+                    <a href="#" class="cart-products__bottom-btn btn-clear">clear shopping cart</a>
+                </div>
             </div>
-            <div class="error-404__box">
-                <span class="error-404__box-ellipse"></span>
-                <span class="error-404__box-ellipse"></span>
-                <span class="error-404__box-ellipse"></span>
-                <span class="error-404__box-ellipse"></span>
-                <div class="error-404__box-title">You can go to <a href="index.html">homepage</a>or search here</div>
-                <form action="#" class="error-404__box-form">
-                    <input type="text" placeholder="Search" required>
-                    <button type="button" class="error-404__box-icon icon_search"></button>
+
+            <nav class="shopping-cart__sidebar shopping-sidebar">
+                <div class="shopping-sidebar__title"><strong>Discount codes</strong>
+                    <span></span>
+                    <div class="shopping-sidebar__line"></div>
+                </div>
+                <form action="#" class="shopping-sidebar__form">
+                    <input type="text" class="shopping-sidebar__form-input" required>
+                    <div class="shopping-sidebar__form-bottom">
+                        <button class="shopping-sidebar__form-btn" type="submit"><span>apply coupon</span></button>
+                        <a href="#" class="shopping-sidebar__form-link">Enter your coupon if you have one</a>
+                    </div>
                 </form>
-            </div>
+                <div class="shopping-sidebar__tax">
+                    <div class="shopping-sidebar__title"><strong>estimate shipping and tax</strong>
+                        <span></span>
+                        <div class="shopping-sidebar__line"></div>
+                    </div>
+                    <div class="shopping-sidebar__tax-subtitle">Enter your destination to get shipping & tax</div>
+                    <div class="shopping-sidebar__tax-item">
+                        <span class="shopping-sidebar__tax-title">Country</span>
+                        <select class="shopping-sidebar__tax-select">
+                            <option>Select options</option>
+                            <option>Select options</option>
+                            <option>Select options</option>
+                        </select>
+                    </div>
+                    <div class="shopping-sidebar__tax-item">
+                        <span class="shopping-sidebar__tax-title">State / Province</span>
+                        <select class="shopping-sidebar__tax-select">
+                            <option>Select options</option>
+                            <option>Select options</option>
+                            <option>Select options</option>
+                        </select>
+                    </div>
+                    <div class="shopping-sidebar__tax-item">
+                        <span class="shopping-sidebar__tax-title">ZIP / Postal Code</span>
+                        <select class="shopping-sidebar__tax-select">
+                            <option>Select options</option>
+                            <option>Select options</option>
+                            <option>Select options</option>
+                        </select>
+                    </div>
+                    <button class="shopping-sidebar__tax-btn" type="button"><span>get a quote</span></button>
+                </div>
+                <div class="shopping-sidebar__total">
+                    <div class="shopping-sidebar__total-box">
+                        <ul class="shopping-sidebar__total-list">
+                            <li class="shopping-sidebar__total-item">
+                                <span class="shopping-sidebar__total-subtitle">Sub total:</span>
+                                <span class="shopping-sidebar__total-price">3660$</span>
+                            </li>
+                            <li class="shopping-sidebar__total-item">
+                                <strong class="shopping-sidebar__total-title">Grand total:</strong>
+                                <span class="shopping-sidebar__total-price">3660$</span>
+                            </li>
+                        </ul>
+                        <div class="shopping-sidebar__total-text">
+                            Checkout with multiple address
+                        </div>
+                        <div class="shopping-sidebar__total-btn">
+                            <a href="./checkout.html" class="shopping-sidebar__total-link">proceed to checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
 </section>

@@ -518,39 +518,233 @@
     <div class="container-fluid">
         <div class="hero__bg" style="background-image: url(./images/hero-bg.jpg);">
             <div class="hero__bg-inner">
-                <div class="hero__bg-description">find not found</div>
-                <div class="hero__bg-title">404 error page</div>
+                <div class="hero__bg-description">checkout</div>
+                <div class="hero__bg-title">checkout</div>
                 <div class="hero__bg-breadcrumb">
                     <a href="#" class="hero__bg-breadcrumb-link">Homepage</a>
-                    <a href="#" class="hero__bg-breadcrumb-link">404 error page</a>
-                    <a href="#" class="hero__bg-breadcrumb-link">404 error</a>
+                    <a href="#" class="hero__bg-breadcrumb-link">Go shopping</a>
+                    <a href="#" class="hero__bg-breadcrumb-link">Checkout</a>
                 </div>
             </div>
-            <div class="hero__bg-line icon-document"></div>
+            <div class="hero__bg-line icon-currency"></div>
         </div>
     </div>
 </section>
-<section class="error-404">
+<section class="checkout-step">
     <div class="container">
-        <div class="error-404__top">
-            <div class="error-404__title">404 error</div>
-            <div class="error-404__text">The page you are looking for does not exist</div>
+        <div class="checkout-step__inner">
+            <div class="checkout-step__item">
+                <div class="checkout-step__number active"><span>01</span></div>
+                <div class="checkout-step__title">shopping cart</div>
+                <div class="checkout-step__description">Manager your items</div>
+            </div>
+            <div class="checkout-step__item">
+                <div class="checkout-step__number --on"><span>02</span></div>
+                <div class="checkout-step__title">checkout</div>
+                <div class="checkout-step__description">Checkout your items</div>
+            </div>
+            <div class="checkout-step__item --off">
+                <div class="checkout-step__number"><span>03</span></div>
+                <div class="checkout-step__title">complete order</div>
+                <div class="checkout-step__description">Review & Submit your order</div>
+            </div>
         </div>
-        <div class="error-404__inner">
-            <div class="error-404__number">404
-                <div class="error-404__number-text"><strong>error</strong></div>
+    </div>
+</section>
+<section class="checkout">
+    <div class="container">
+        <div class="checkout__wrapper">
+            <div class="checkout__top">
+                <span class="checkout__top-text">Returning customer?</span>
+                <button class="checkout__top-btn" type="button">Click here to login</button>
             </div>
-            <div class="error-404__box">
-                <span class="error-404__box-ellipse"></span>
-                <span class="error-404__box-ellipse"></span>
-                <span class="error-404__box-ellipse"></span>
-                <span class="error-404__box-ellipse"></span>
-                <div class="error-404__box-title">You can go to <a href="index.html">homepage</a>or search here</div>
-                <form action="#" class="error-404__box-form">
-                    <input type="text" placeholder="Search" required>
-                    <button type="button" class="error-404__box-icon icon_search"></button>
-                </form>
-            </div>
+            <form action="#" class="checkout__inner">
+                <div class="checkout__content">
+                    <div class="checkout__content-title">
+                        <strong>billing address</strong>
+                        <span class="checkout__content-title-line"></span>
+                    </div>
+                    <div class="checkout__content-info checkout-info">
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">Country</label>
+                            <input type="text" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">First Name</label>
+                            <input type="text" name="name" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">Last Name</label>
+                            <input type="text" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">Company Name</label>
+                            <input type="text" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title">Address</label>
+                            <div>
+                                <input type="text" name="address" class="checkout-info__input"
+                                       placeholder="Street address" required>
+                                <input type="text" name="address" class="checkout-info__input"
+                                       placeholder="Apartment, suite, unite ect. (optinal)" required>
+                            </div>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">Town / City</label>
+                            <input type="text" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title">country / states</label>
+                            <input type="text" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title">Postcode / Zip</label>
+                            <input type="text" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">Email Address</label>
+                            <input type="email" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">Phone</label>
+                            <input type="tel" class="checkout-info__input" required>
+                        </div>
+                        <div class="checkout-info__question">
+                            <input type="checkbox" id="creat-account">
+                            <label for="creat-account">Create an account?</label>
+                            <input type="checkbox" id="creat-address">
+                            <label for="creat-address">Ship to different Address?</label>
+                        </div>
+                        <div class="checkout-info__col">
+                            <label class="checkout-info__title required">Order notes</label>
+                            <textarea class="checkout-info__textarea"
+                                      placeholder="Notes about your orders, e.g.special notes for delivery"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <aside class="checkout__aside">
+                    <div class="checkout__aside-box">
+                        <div class="filter__aside-title"><strong>size product</strong>
+                            <span></span>
+                            <div class="filter__aside-line"></div>
+                        </div>
+                        <div class="checkout__aside-top">
+                            <div class="checkout__aside-subtitle">Product</div>
+                            <div class="checkout__aside-subtitle">Total</div>
+                        </div>
+                        <ul class="checkout__aside-list">
+                            <li class="checkout__aside-item">
+                                <span class="checkout__aside-item-name">Black Beanie Skate Girl x 1</span>
+                                <strong id="checkout-price01" class="checkout__aside-item-price"> 120</strong>
+                            </li>
+                            <li class="checkout__aside-item">
+                                <span class="checkout__aside-item-name">Classic Black Telephone × 2	</span>
+                                <strong id="checkout-price02" class="checkout__aside-item-price"> 440</strong>
+                            </li>
+                            <li class="checkout__aside-item">
+                                <span class="checkout__aside-item-name">Black and White Varsity Jacket × 3</span>
+                                <strong id="checkout-price03" class="checkout__aside-item-price"> 960</strong>
+                            </li>
+                        </ul>
+                        <div class="checkout__aside-subtotal">
+                            <span class="checkout__aside-subtitle">Cart Subtotal</span>
+                            <strong class="checkout__aside-subtotal-price">$1520,00</strong>
+                        </div>
+                        <div class="checkout__aside-shipping">
+                            <div class="checkout__aside-shipping-text">Shipping <br>
+                                And Handling
+                            </div>
+                            <ul class="checkout__aside-shipping-list">
+                                <li class="checkout__aside-shipping-item">
+                                    <input checked name="shipping" id="shipping01" type="radio"
+                                           class="checkout__aside-shipping-input">
+                                    <label for="shipping01" class="checkout__aside-shipping-description">Flat Rate:
+                                        $100.00 </label>
+                                </li>
+                                <li class="checkout__aside-shipping-item">
+                                    <input name="shipping" id="shipping02" type="radio"
+                                           class="checkout__aside-shipping-input">
+                                    <label for="shipping02" class="checkout__aside-shipping-description">Free
+                                        Shipping</label>
+                                </li>
+                                <li class="checkout__aside-shipping-item">
+                                    <input name="shipping" id="shipping03" type="radio"
+                                           class="checkout__aside-shipping-input">
+                                    <label for="shipping03" class="checkout__aside-shipping-description">International
+                                        $175.00</label>
+                                </li>
+                                <li class="checkout__aside-shipping-item">
+                                    <input name="shipping" id="shipping04" type="radio"
+                                           class="checkout__aside-shipping-input">
+                                    <label for="shipping04" class="checkout__aside-shipping-description">Local Delivery:
+                                        $60.00</label>
+                                </li>
+                                <li class="checkout__aside-shipping-item">
+                                    <input name="shipping" id="shipping05" type="radio"
+                                           class="checkout__aside-shipping-input">
+                                    <label for="shipping05" class="checkout__aside-shipping-description">Local Pickup
+                                        Free</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="checkout__aside-subtotal">
+                            <span class="checkout__aside-subtitle">Order Total	</span>
+                            <strong class="checkout__aside-subtotal-price">$ 1620,00</strong>
+                        </div>
+
+                        <div class="checkout__aside-payment checkout-payment">
+                            <div class="checkout-payment__item">
+                                <div class="checkout-payment__btn acc-active">
+                                    <input checked  name="payment" type="radio" class="checkout-payment__btn-input"
+                                           id="payment-name01">
+                                    <label for="payment-name01">Direct Bank Transfer</label>
+                                </div>
+
+                                <div class="checkout-payment__content show">
+                                    Make your payment directly into our bank account. Please use your Order ID as the
+                                    payment reference. Your order won’t be shipped until the funds have cleared in our
+                                    account.
+                                </div>
+                            </div>
+                            <div class="checkout-payment__item">
+                                <div class="checkout-payment__btn">
+                                    <input name="payment" type="radio" class="checkout-payment__btn-input"
+                                           id="payment-name02">
+                                    <label for="payment-name02">Cheque Payment</label>
+                                </div>
+
+                                <div class="checkout-payment__content">
+                                    Make your payment directly into our bank account. Please use your Order ID as the
+                                    payment reference. Your order won’t be shipped until the funds have cleared in our
+                                    account.
+                                </div>
+                            </div>
+                            <div class="checkout-payment__item">
+                                <div class="checkout-payment__btn">
+                                    <input name="payment" type="radio" class="checkout-payment__btn-input"
+                                           id="payment-name03">
+                                    <label for="payment-name03">PayPal</label>
+                                    <img class="checkout-payment__icons" src="./images/payment__cart-img.jpg" alt="">
+                                </div>
+
+                                <div class="checkout-payment__content">
+                                    Make your payment directly into our bank account. Please use your Order ID as the
+                                    payment reference. Your order won’t be shipped until the funds have cleared in our
+                                    account.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__aside-checkbox">
+                            <input checked type="checkbox" id="payment-checkbox">
+                            <label for="payment-checkbox">I have read and accept the Terms & Conditions</label>
+                        </div>
+                        <div class="checkout__aside-btn">
+                            <button type="submit">PLACE ORDER</button>
+                        </div>
+                    </div>
+                </aside>
+            </form>
         </div>
     </div>
 </section>
@@ -621,6 +815,7 @@
         </div>
     </div>
 </footer>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="./js/libs.min.js"></script>
 <script src="./js/main.js"></script>

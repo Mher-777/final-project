@@ -142,7 +142,11 @@ $(function () {
         $('.header__top-log').toggleClass('active');
         $('.header__top-register').removeClass('active')
     });
-
+    $('.checkout__top-btn').on('click', function () {
+        $('.header__top-log ').addClass('active');
+        $('html, body').animate({scrollTop: 0}, 1000);
+        event.preventDefault()
+    });
 
     wow.init();
 
@@ -301,7 +305,63 @@ $(function () {
         appendArrows: '.about-testimonials__slider-arrows',
     });
 
-    let mixer = mixitup('.categories__inner');
+    function subtotalPrice() {
+        let $priceOne = $('#checkout-price01').text(),
+            $priceTwo = $('#checkout-price02').text(),
+            $priceThree = $('#checkout-price03').text();
+        const subtotalPrice = +$priceOne + +$priceTwo + +$priceThree;
+        console.log(subtotalPrice)
+    }
+
+    // subtotalPrice ();
+    function accordion (){
+        $('.checkout-payment__btn').click(function() {
+            $('.checkout-payment__content').slideUp('normal');
+            $('.checkout-payment__btn').removeClass('acc-active');
+            if ($(this).next().is(':visible') === true) {
+                $('.checkout-payment__btn').removeClass('active');
+            }
+            if ($(this).next().is(':hidden') === true) {
+                $(this).next().slideDown('normal');
+                $(this).addClass('acc-active');
+            }
+            $('.checkout-payment__content').one().removeClass('show');
+        });
+        $('.checkout-payment__content').hide();
+        $('.show').show();
+    }
+    accordion();
+    $('.checkout-payment__btn label').on('click', function (event) {
+        event.preventDefault();
+    });
+
+    function productQuantity(){
+        let quantityPlus = $('.cart-product__quantity-plus'),
+            quantityNumber = $('.cart-product__quantity-number').val(),
+            quantityMinus = $('.cart-product__quantity-minus'),
+            quantityPart = $('.product-quantity'),
+            productPrice = $('.cart-product__price').text(),
+            productData = $('.cart-product__price').attr("data-price");
+        parseInt(quantityNumber);
+        quantityPlus.on('click', function () {
+            quantityNumber++;
+            quantityPart.val(quantityNumber);
+            productPrice = +productPrice + +productData;
+            $('.total-price').text(productPrice)
+        });
+        quantityMinus.on('click', function () {
+            quantityNumber--;
+            quantityPart.val(quantityNumber);
+            productPrice = +productPrice - +productData;
+            $('.total-price').text(productPrice)
+        });
+    }
+    productQuantity();
+    $('.cart-products__bottom-btn.btn-clear').on('click', function (event) {
+        $(".cart-product").remove();
+        event.preventDefault();
+        $('.shopping-cart__content').addClass('--off')
+    });
     $('#header-btn__reg').on('click', function () {
         const name = $("#name").val().trim();
         const email = $("#email").val().trim();
@@ -349,6 +409,47 @@ $(function () {
             return false;
         }
     });
+
+    // $.ajax({
+    //     url: host + '/rest/products/',
+    //     type: "GET",
+    //     contentType: "application/json;charset=utf-8",
+    //     dataType: "JSON",
+    //     success: function (data) {
+    //         console.log(data);
+    //         for (let i = 0; i < 6; i++) {
+    //             // let dataImages = data[i]['category']['id'];
+    //             // let dataTitle = data[i]['images'][''];
+    //             // let dataUrl = data[i]['url'];
+    //
+    //             $('.product-filter__content-inner').append(
+    //                 `<div class="product-filter__content-item">
+    //                     <div class="product-filter__content-images"
+    //                          style="background-image: url(../images/product-filter__content-img.jpg);">
+    //                         <div class="product-filter__content-icons">
+    //                             <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+    //                             <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+    //                             <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+    //                         </div>
+    //                     </div>
+    //                     <div class="product-filter__content-wrapper">
+    //                         <a href="#" class="product-filter__content-title">Spherical Bud Vase</a>
+    //                         <span class="product-filter__content-description">
+    //                             Josh Herman Ceramics
+    //                         </span>
+    //                         <div class="product-filter__content-price">
+    //                             <strong>$ 126</strong>
+    //                         </div>
+    //                     </div>
+    //                 </div>`
+    //             )
+    //         }
+    //     },
+    //     error: function (data) {
+    //         console.log(data)
+    //     }
+    //
+    // });
 
     $('#login').on('click', function () {
         const emailInput = $('#email-input').val().trim();
@@ -413,8 +514,8 @@ $.ajax({
         });
     }
 
-});
-
+})
+var mixer = mixitup('.categories__inner')
 // let stateObj = {test: 'html'};
 // history.pushState(stateObj, "", "collection");
 // history.replaceState(stateObj, "", "collection");

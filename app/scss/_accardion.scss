@@ -1,0 +1,48 @@
+@import "vars";
+.checkout-payment{
+  border: 1px solid #e6e6e6;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  &__btn{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    &::before{
+      content: '\4c';
+      @include icon;
+      position: absolute;
+      right: 30px;
+    }
+    &.acc-active{
+      &::before{
+        content: '\4b';
+        @include icon;
+        position: absolute;
+        right: 30px;
+      }
+    }
+    label{
+      padding-left: 10px;
+      color: #000;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+  &__content{
+    padding: 20px 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 23px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  &__icons{
+    margin-left: 20px;
+  }
+}
+
+
+
