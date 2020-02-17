@@ -409,7 +409,21 @@ $(function () {
             return false;
         }
     });
-
+    new TimezZ('.coming__soon-countdown-box', {
+        date: 'Dec 17, 2020 00:00:00',
+        isStopped: false,
+        canContinue: false,
+        template: '<span>NUMBER<i></i></span> ',
+        text: {
+            days: '1',
+            hours: '1',
+            minutes: '1',
+            seconds: '35',
+        },
+        beforeCreate() {},
+        beforeDestroy() {},
+        finished() {},
+    });
     // $.ajax({
     //     url: host + '/rest/products/',
     //     type: "GET",
@@ -514,7 +528,7 @@ $.ajax({
         });
     }
 
-})
+});
 var mixer = mixitup('.categories__inner')
 // let stateObj = {test: 'html'};
 // history.pushState(stateObj, "", "collection");

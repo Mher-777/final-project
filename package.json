@@ -26,5 +26,8 @@
     "rateyo": "^2.3.5",
     "slick-carousel": "^1.8.1",
     "wow.js": "^1.2.2"
+  },
+  "dependencies": {
+    "timezz": "^5.0.0"
   }
 }

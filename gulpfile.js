@@ -48,6 +48,7 @@ gulp.task('script', function () {
         'node_modules/mixitup/dist/mixitup.js',
         'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
         'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
+        'node_modules/timezz/dist/timezz.js',
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
