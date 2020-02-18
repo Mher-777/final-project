@@ -1,6 +1,14 @@
 $(function () {
-    const host = 'http://localhost:8011';
+    function include(url) {
+        let script = document.createElement('script');
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
 
+    include("/js/remove-url.js");
+    const host = 'http://localhost:8011';
+    accordion();
+    ourGallery();
     $('.main-slider__inner').slick({
         rows: 0,
         prevArrow: '<button class="main-arrow main-arrow__left"></button>',
@@ -63,7 +71,7 @@ $(function () {
         starWidth: "12px",
         ratedFill: "#f6cc4c",
     });
-    $('.product__reviews-item-content').mCustomScrollbar({
+    $('.product__reviews-item-content, .testimonials__item-box-info, .blog__content-row-text').mCustomScrollbar({
         axis: "y",
         theme: "dark-thin"
     });
@@ -142,7 +150,7 @@ $(function () {
         $('.header__top-log').toggleClass('active');
         $('.header__top-register').removeClass('active')
     });
-    $('.checkout__top-btn').on('click', function () {
+    $('.checkout__top-btn').on('click', function (event) {
         $('.header__top-log ').addClass('active');
         $('html, body').animate({scrollTop: 0}, 1000);
         event.preventDefault()
@@ -299,6 +307,12 @@ $(function () {
         arrows: false,
         autoplay: true,
     });
+    $('.room__products-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        prevArrow: '<button class="room-arrows room-arrows__left"></button>',
+        nextArrow: '<button class="room-arrows room-arrows__right"></button>',
+    });
     $('.about-testimonials__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -313,9 +327,26 @@ $(function () {
         console.log(subtotalPrice)
     }
 
+    function ourGallery() {
+        for (let i = 0; i < 16; i++) {
+            // language=HTML
+            $('.our-gallery__inner').append(
+                    `
+                        <div class="our-gallery__item" style="background-image: url(./images/our-gallery__img01.jpg);">
+                            <div class="our-gallery__item-box">
+                                <a data-fancybox="images" href="./images/our-gallery__img01.jpg"
+                                   class="our-gallery__item-link">L</a>
+                                <div class="our-gallery__item-text">Bonita Springs Beige Sofa</div>
+                            </div>
+                        </div>`
+            )
+        }
+    }
+
+
     // subtotalPrice ();
-    function accordion (){
-        $('.checkout-payment__btn').click(function() {
+    function accordion() {
+        $('.checkout-payment__btn').click(function () {
             $('.checkout-payment__content').slideUp('normal');
             $('.checkout-payment__btn').removeClass('acc-active');
             if ($(this).next().is(':visible') === true) {
@@ -330,33 +361,36 @@ $(function () {
         $('.checkout-payment__content').hide();
         $('.show').show();
     }
-    accordion();
+
+
     $('.checkout-payment__btn label').on('click', function (event) {
         event.preventDefault();
     });
+    $(".cart-product__quantity .cart-product__quantity-number").each(function() {
+        let test =$(this).val()
+        console.log(+test)
+    });
+    $(".cart-product .cart-product__price").each(function() {
+        let test =$(this).text()
+        let replace = test.replace('$', "");
+        console.log(+replace)
+    });
 
-    function productQuantity(){
-        let quantityPlus = $('.cart-product__quantity-plus'),
-            quantityNumber = $('.cart-product__quantity-number').val(),
-            quantityMinus = $('.cart-product__quantity-minus'),
-            quantityPart = $('.product-quantity'),
-            productPrice = $('.cart-product__price').text(),
-            productData = $('.cart-product__price').attr("data-price");
-        parseInt(quantityNumber);
-        quantityPlus.on('click', function () {
-            quantityNumber++;
-            quantityPart.val(quantityNumber);
-            productPrice = +productPrice + +productData;
-            $('.total-price').text(productPrice)
-        });
-        quantityMinus.on('click', function () {
-            quantityNumber--;
-            quantityPart.val(quantityNumber);
-            productPrice = +productPrice - +productData;
-            $('.total-price').text(productPrice)
-        });
-    }
-    productQuantity();
+    $('.cart-product__quantity-plus').on('click',  function () {
+        $(this).prev().val(+$(this).prev().val() + 1);
+        updateCartTotal();
+
+    });
+    $('.cart-product__quantity-minus').on('click', function () {
+        if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+        updateCartTotal()
+    });
+    $('.cart-products__bottom-btn.btn-update').on('click', function (event) {
+        event.preventDefault();
+        $('.cart-product__quantity-number').val(1)
+        updateCartTotal()
+    });
+
     $('.cart-products__bottom-btn.btn-clear').on('click', function (event) {
         $(".cart-product").remove();
         event.preventDefault();
@@ -409,21 +443,24 @@ $(function () {
             return false;
         }
     });
-    new TimezZ('.coming__soon-countdown-box', {
-        date: 'Dec 17, 2020 00:00:00',
-        isStopped: false,
-        canContinue: false,
-        template: '<span>NUMBER<i></i></span> ',
-        text: {
-            days: '1',
-            hours: '1',
-            minutes: '1',
-            seconds: '35',
-        },
-        beforeCreate() {},
-        beforeDestroy() {},
-        finished() {},
-    });
+    // new TimezZ('.coming__soon-countdown-box', {
+    //     date: 'Dec 17, 2020 00:00:00',
+    //     isStopped: false,
+    //     canContinue: false,
+    //     template: '<span>NUMBER<i></i></span> ',
+    //     text: {
+    //         days: '1',
+    //         hours: '1',
+    //         minutes: '1',
+    //         seconds: '35',
+    //     },
+    //     beforeCreate() {
+    //     },
+    //     beforeDestroy() {
+    //     },
+    //     finished() {
+    //     },
+    // });
     // $.ajax({
     //     url: host + '/rest/products/',
     //     type: "GET",
@@ -492,43 +529,38 @@ $(function () {
     })
 });
 
-$.ajax({
-    url: 'https://jsonplaceholder.typicode.com/photos',
-    type: "GET",
-    dataType: "JSON",
-    success: function (data) {
-        for (let i = 0; i < 10; i++) {
-            let dataImages = data[i]['thumbnailUrl'];
-            let dataTitle = data[i]['title'];
-            let dataUrl = data[i]['url'];
-            $('.dinning-room__products .room__products-slider').append(
-                `<div class="dinning-room__products-content">
-                    <div class="dinning-room__products-box">
-                        <a href="#" class="dinning-room__products-images">
-                            <img src="${dataImages}" alt="">
-                        </a>
-                        <a href="${dataUrl}" class="dinning-room__products-bottom">
-                            <div class="dinning-room__products-title">
-                                ${dataTitle}
-                            </div>
-                            <span class="dinning-room__products-subtitle">
-                                Square Steel Tube
-                            </span>
-                            <button class="dinning-room__products-btn">$ 126</button>
-                        </a>
-                    </div>
-                </div>`
-            );
-        }
-        $('.room__products-slider').slick({
-            slidesToShow: 4,
-            slidesToScroll: 2,
-            prevArrow: '<button class="room-arrows room-arrows__left"></button>',
-            nextArrow: '<button class="room-arrows room-arrows__right"></button>',
-        });
-    }
-
-});
+// $.ajax({
+//     url: 'https://jsonplaceholder.typicode.com/photos',
+//     type: "GET",
+//     dataType: "JSON",
+//     success: function (data) {
+//         for (let i = 0; i < 10; i++) {
+//             let dataImages = data[i]['thumbnailUrl'];
+//             let dataTitle = data[i]['title'];
+//             let dataUrl = data[i]['url'];
+//             $('.dinning-room__products .room__products-slider').append(
+//                 `<div class="dinning-room__products-content">
+//                     <div class="dinning-room__products-box">
+//                         <a href="#" class="dinning-room__products-images">
+//                             <img src="${dataImages}" alt="">
+//                         </a>
+//                         <a href="${dataUrl}" class="dinning-room__products-bottom">
+//                             <div class="dinning-room__products-title">
+//                                 ${dataTitle}
+//                             </div>
+//                             <span class="dinning-room__products-subtitle">
+//                                 Square Steel Tube
+//                             </span>
+//                             <button class="dinning-room__products-btn">$ 126</button>
+//                         </a>
+//                     </div>
+//                 </div>`
+//             );
+//         }
+//
+//     }
+//
+// });
 var mixer = mixitup('.categories__inner')
 // let stateObj = {test: 'html'};
 // history.pushState(stateObj, "", "collection");
