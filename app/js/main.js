@@ -47,7 +47,26 @@ $(function () {
         asNavFor: '.product-pagination__slider',
         dotsClass: 'product-pagination__line',
         autoplay: true,
-
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    dots: false,
+                    slidesToShow: 2,
+                    centerMode: false,
+                    variableWidth: false,
+                }
+            },
+            {
+                breakpoint: 616,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false,
+                    variableWidth: false,
+                    dots: false,
+                }
+            }
+        ]
     });
 
     $('.product-pagination__slider').slick({
@@ -61,8 +80,26 @@ $(function () {
         prevArrow: '<button class="product-arrows product-arrows__left"></button>',
         nextArrow: '<button class="product-arrows product-arrows__right"></button>',
         autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 535,
+                settings: {
+                    slidesToShow: 4,
+                    arrows: false,
+                }
+            },
+            {
+                breakpoint: 380,
+                settings: {
+                    slidesToShow: 3,
+                    arrows: false,
+                }
+            }
+        ]
     });
-
+    $('.header-personal__btn').on('click', function () {
+        $('.header-personal').toggleClass('--on')
+    });
     $('.categories-pagination__slider').slick({
         rows: 0,
         dots: false,
@@ -72,6 +109,22 @@ $(function () {
         prevArrow: '<button class="product-arrows product-arrows__left"></button>',
         nextArrow: '<button class="product-arrows product-arrows__right"></button>',
         autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 630,
+                settings: {
+                    slidesToShow: 3,
+                    autoplay: true,
+                }
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 2,
+                    autoplay: true,
+                }
+            }
+        ]
     });
 
     $(".product__slider-item-star, .categories__item-star").rateYo({
