@@ -5,7 +5,8 @@ let gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    cssmin = require('gulp-cssmin');
+    cssmin = require('gulp-cssmin'),
+    imagemin = require('gulp-imagemin');
 
 gulp.task('sass', function () {
     return gulp.src('app/scss/**/*.scss')
@@ -34,6 +35,13 @@ gulp.task('style', function () {
         .pipe(cssmin())
         .pipe(gulp.dest('app/css'))
 
+});
+gulp.task('img-compress', function () {
+    return gulp.src('./app/images/**')
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest('./build/images/'))
 });
 
 gulp.task('html', function () {
@@ -79,6 +87,7 @@ gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', gulp.parallel('sass'))
     gulp.watch('app/*.html', gulp.parallel('html'))
     gulp.watch('app/js/*.js', gulp.parallel('js'))
+    gulp.watch('app/images/**', gulp.parallel('img-compress'))
 });
 
-gulp.task('default', gulp.parallel('style', 'sass', 'script', 'watch', 'browser-sync', ));
+gulp.task('default', gulp.parallel('style', 'sass', 'script', 'watch', 'browser-sync'));

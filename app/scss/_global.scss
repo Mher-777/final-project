@@ -14,9 +14,11 @@ a {
   display: inline-block;
   text-decoration: none;
 }
-span{
+
+span {
   display: inline-block;
 }
+
 ul {
   list-style: none;
 }
@@ -178,8 +180,13 @@ body {
   background-color: #efefef;
   margin-top: 4px;
 }
-.hero__bg-line.icon-document{
-  &::before{
+
+.hero__bg-line.icon-document {
+  &::before {
     content: "\68";
   }
+}
+
+.slick-slide, .slick-slide * {
+  outline: none !important;
 }

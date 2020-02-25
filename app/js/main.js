@@ -9,6 +9,7 @@ $(function () {
     const host = 'http://localhost:8011';
     accordion();
     ourGallery();
+    checkComing()
     $('.main-slider__inner').slick({
         rows: 0,
         prevArrow: '<button class="main-arrow main-arrow__left"></button>',
@@ -137,17 +138,8 @@ $(function () {
         theme: "dark-thin"
     });
 
-    $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate, .product-details__reviews-rate, .product__reviews-item-rate").rateYo({
-        rating: 5,
-        starWidth: "13px",
-        ratedFill: "#f6cc4c",
-        readOnly: true,
-    });
-    $('.reviews-add__form-star').rateYo({
-        rating: 5,
-        starWidth: "13px",
-        ratedFill: "#f6cc4c",
-    });
+
+
 
     $('.categories-pagination__slider-btn').on('click', function () {
         $(this).addClass('active');
@@ -192,7 +184,7 @@ $(function () {
     });
     let wow = new WOW(
         {
-            offset: 150,
+            offset: 100,
         }
     );
 
@@ -340,7 +332,17 @@ $(function () {
         slidesToScroll: 1,
         rows: 0,
         asNavFor: '.product-details__slider-wrapper',
-        focusOnSelect: true
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 561,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: false,
+                }
+            }
+        ]
     });
     $('.product-description__wrapper .tab').on('click', function (event) {
         let id = $(this).attr('data-id');
@@ -350,7 +352,111 @@ $(function () {
         $('#' + id).addClass('active-tab').fadeIn();
         return false;
     });
+    for (let i = 0; i < 12; i++) {
+        $('.product-list__slider').append(
+            `<div class="product-list__slider-wrapper">
+                <div class="product-list__row">
+                <div class="product-list__sale">
+                        <span class="product-list__sale-text">
+                            best sale
+                        </span>
+                    <div class="product-list__sale-price">
+                        -15% off
+                    </div>
+                </div>
+                <div class="product-list__item">
+                    <div class="product-list__item-images"
+                         style="background-image: url(./images/product-list__img01.jpg);"></div>
+                </div>
+                <div class="product-list__item">
+                    <div class="product-list__item-content">
+                        <a href="#" class="product-list__item-title">BABILA 2736</a>
+                        <div class="product-list__item-reviews">
+                            <div class="product-list__item-rate"></div>
+                            <a href="#" class="product-list__item-reviews-link">03 review</a>
+                            <a href="#" class="product-list__item-reviews-link">add your review</a>
+                        </div>
+                        <div class="product-list__item-text">
+                            Babila armchair recalls the distinctive features and design of the collection, taking
+                            inspiration from the classic and timeless objects
+                        </div>
+                        <div class="product-list__action">
+                            <a href="#" class="product-list__action-link">add to cart
+                                <span></span>
+                            </a>
+                            <a href="#" class="product-list__action-btn icon_heart_alt"></a>
+                            <a href="#" class="product-list__action-btn icon_tags_alt"></a>
+                            <a href="#" class="product-list__action-btn icon_search"></a>
+                        </div>
+                    </div>
+                        <div class="product-list__info">
+                            <div class="product-list__info-price">$ 126
+                                <span>$ 252</span>
+                            </div>
+                            <div class="product-list__info-text">Out of stock</div>
+                        </div>
 
+                </div>
+            </div>
+        </div>`,
+            `<div class="product-list__slider-wrapper">
+                <div class="product-list__row row-reverse">
+                <div class="product-list__sale">
+                        <span class="product-list__sale-text">
+                            best sale
+                        </span>
+                    <div class="product-list__sale-price">
+                        -15% off
+                    </div>
+                </div>
+                <div class="product-list__item">
+                    <div class="product-list__item-images"
+                         style="background-image: url(./images/product-list__img01.jpg);"></div>
+                </div>
+                <div class="product-list__item">
+                    <div class="product-list__item-content">
+                        <a href="#" class="product-list__item-title">BABILA 2736</a>
+                        <div class="product-list__item-reviews">
+                            <div class="product-list__item-rate"></div>
+                            <a href="#" class="product-list__item-reviews-link">03 review</a>
+                            <a href="#" class="product-list__item-reviews-link">add your review</a>
+                        </div>
+                        <div class="product-list__item-text">
+                            Babila armchair recalls the distinctive features and design of the collection, taking
+                            inspiration from the classic and timeless objects
+                        </div>
+                        <div class="product-list__action">
+                            <a href="#" class="product-list__action-link">add to cart
+                                <span></span>
+                            </a>
+                            <a href="#" class="product-list__action-btn icon_heart_alt"></a>
+                            <a href="#" class="product-list__action-btn icon_tags_alt"></a>
+                            <a href="#" class="product-list__action-btn icon_search"></a>
+                        </div>
+                    </div>
+                    <div class="product-list__info">
+                        <div class="product-list__info-price">$ 126
+                            <span>$ 252</span>
+                        </div>
+                        <div class="product-list__info-text --in-stock">in stock</div>
+                    </div>
+
+                </div>
+            </div>
+         </div>`
+        )
+    }
+    $('.product-list__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        rows: 5,
+        arrows: false,
+        dots: true,
+        appendDots: '.product-list__inner',
+        dotsClass: 'product-list__pagination',
+        touchMove: false,
+        touchThreshold: 0,
+    })
     $('.product-description__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -366,13 +472,48 @@ $(function () {
         rows: 0,
         variableWidth: true,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1,
+                    variableWidth: false,
+                    centerMode: false,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     });
     $('.room__products-slider').slick({
         slidesToShow: 4,
         slidesToScroll: 2,
         prevArrow: '<button class="room-arrows room-arrows__left"></button>',
         nextArrow: '<button class="room-arrows room-arrows__right"></button>',
+        responsive: [
+            {
+                breakpoint: 1150,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 945,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 645,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                }
+            }
+        ]
     });
     $('.about-testimonials__slider').slick({
         slidesToShow: 1,
@@ -380,6 +521,9 @@ $(function () {
         appendArrows: '.about-testimonials__slider-arrows',
     });
 
+    $('.lookbook__hamburger').on('click', function () {
+        $('.lookbook__header-navigation').slideToggle()
+    })
 
     function ourGallery() {
         for (let i = 0; i < 16; i++) {
@@ -404,9 +548,76 @@ $(function () {
     $('.header__bottom-search').on('click', function () {
         $('.header-personal').toggleClass('--on')
     });
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/photos',
+        type: "GET",
+        dataType: 'JSON',
+        success: function (data) {
+            for (let i = 0; i < 40; i++) {
+                let productId = data[i]['id'];
+                let productImages = data[i]['url'];
+                let productTitle = data[i]['title'];
 
+                $('.product-filter__content-slider').append(
+                    `<div id="${productId}" class="product-filter__content-item">
+                            <div class="product-filter__content-images"
+                                 style="background-image: url(${productImages});">
+                                <div class="product-filter__content-icons">
+                                    <a href="#" class="product-filter__content-icon icon_bag_alt"></a>
+                                    <a href="#" class="product-filter__content-icon icon_heart_alt"></a>
+                                    <a href="#" class="product-filter__content-icon icon_tags_alt"></a>
+                                </div>
+                            </div>
+                            <div class="product-filter__content-wrapper">
+                                <a href="#" class="product-filter__content-title">${productTitle}</a>
+                                <span class="product-filter__content-description">
+                                Josh Herman Ceramics
+                            </span>
+                                <div class="product-filter__content-price">
+                                    <strong>$ 126</strong>
+                                </div>
+                            </div>
+                        </div>`
+                )
+            }
 
-    // subtotalPrice ();
+            $(".product-filter__content-slider").slick({
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                rows: 4,
+                arrows: false,
+                infinite: false,
+                dots: true,
+                appendDots: '.product-filter__content-inner',
+                dotsClass: 'product-filter__content-pagination',
+                touchMove: false,
+                touchThreshold: 0,
+                responsive: [
+                    {
+                        breakpoint: 1187,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            rows: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 705,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            rows: 4,
+                        }
+                    }
+                ]
+            });
+        },
+    })
+    $('.product-filter__btn').on('click', function () {
+        $('.product-filter__aside').toggleClass('--on');
+        $('.product-filter').toggleClass('shadows')
+    })
+
     function accordion() {
         $('.checkout-payment__btn').click(function () {
             $('.checkout-payment__content').slideUp('normal');
@@ -457,6 +668,7 @@ $(function () {
         $(".cart-product").remove();
         event.preventDefault();
         $('.shopping-cart__content').addClass('--off')
+        updateCartTotal()
     });
 
     $('#header-btn__reg').on('click', function () {
@@ -484,12 +696,12 @@ $(function () {
 
                 },
                 success: function (data) {
-                    window.location.href = "lookbook-page.html";
+                    location.reload()
                 },
             });
         }
 
-        if (password.length >= 8) {
+        if (password.length >= 8 && name > 0) {
             formPost();
         } else if (password === "") {
             passwordError.text('Enter password!');
@@ -506,24 +718,34 @@ $(function () {
             return false;
         }
     });
-    new TimezZ('.coming__soon-countdown-box', {
-        date: 'Dec 17, 2020 00:00:00',
-        isStopped: false,
-        canContinue: false,
-        template: '<span>NUMBER<i></i></span> ',
-        text: {
-            days: '1',
-            hours: '1',
-            minutes: '1',
-            seconds: '35',
-        },
-        beforeCreate() {
-        },
-        beforeDestroy() {
-        },
-        finished() {
-        },
-    });
+
+    function timerComing() {
+        new TimezZ('.coming__soon-countdown-box', {
+            date: 'Dec 17, 2020 00:00:00',
+            isStopped: false,
+            canContinue: false,
+            template: '<span>NUMBER<i></i></span> ',
+            text: {
+                days: '1',
+                hours: '1',
+                minutes: '1',
+                seconds: '35',
+            },
+            beforeCreate() {
+            },
+            beforeDestroy() {
+            },
+            finished() {
+            },
+        });
+    }
+
+    function checkComing() {
+        const newURL = window.location.protocol + "//" + window.location.host + "" + window.location.pathname;
+        if (newURL === 'http://localhost:3000/coming-soon.html') {
+            timerComing()
+        }
+    }
 
     // $.ajax({
     //     url: host + '/rest/products/',
@@ -583,50 +805,35 @@ $(function () {
             error: function (request, status, error) {
                 $('#email-login__error').text('login or password incorrect')
             },
-            success: function (token) {
-                let loginToken;
-                loginToken = token;
-                console.log(loginToken);
-                window.location.href = "lookbook-page.html";
+            success: function (data) {
+                let loginToken = data['token'];
+                localStorage.setItem('token', loginToken)
             },
         });
     })
+    const token = localStorage.getItem('token');
+    if (token) {
+        console.log(token + " Все прошло успешно")
+    } else {
+        console.log('error')
+    }
+    $(".top-collection__item-star, .products-grid__info-rate, .product-list__item-rate, .product-details__reviews-rate, .product__reviews-item-rate").rateYo({
+        rating: 5,
+        starWidth: "13px",
+        ratedFill: "#f6cc4c",
+        readOnly: true,
+    });
+    $('.reviews-add__form-star').rateYo({
+        rating: 5,
+        starWidth: "13px",
+        ratedFill: "#f6cc4c",
+    });
 });
 
-// $.ajax({
-//     url: 'https://jsonplaceholder.typicode.com/photos',
-//     type: "GET",
-//     dataType: "JSON",
-//     success: function (data) {
-//         for (let i = 0; i < 10; i++) {
-//             let dataImages = data[i]['thumbnailUrl'];
-//             let dataTitle = data[i]['title'];
-//             let dataUrl = data[i]['url'];
-//             $('.dinning-room__products .room__products-slider').append(
-//                 `<div class="dinning-room__products-content">
-//                     <div class="dinning-room__products-box">
-//                         <a href="#" class="dinning-room__products-images">
-//                             <img src="${dataImages}" alt="">
-//                         </a>
-//                         <a href="${dataUrl}" class="dinning-room__products-bottom">
-//                             <div class="dinning-room__products-title">
-//                                 ${dataTitle}
-//                             </div>
-//                             <span class="dinning-room__products-subtitle">
-//                                 Square Steel Tube
-//                             </span>
-//                             <button class="dinning-room__products-btn">$ 126</button>
-//                         </a>
-//                     </div>
-//                 </div>`
-//             );
-//         }
-//
-//     }
-//
-// });
+
 
 var mixer = mixitup('.categories__inner')
+
 // let stateObj = {test: 'html'};
 // history.pushState(stateObj, "", "collection");
 // history.replaceState(stateObj, "", "collection");
